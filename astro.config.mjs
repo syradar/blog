@@ -13,17 +13,29 @@ export default defineConfig({
 				github: "https://github.com/syradar/blog",
 			},
 			sidebar: [
+				// {
+				// 	label: "Guides",
+				// 	items: [
+				// 		// Each item here is one entry in the navigation menu.
+				// 		{ label: "Example Guide", slug: "guides/example" },
+				// 	],
+				// },
 				{
-					label: "Guides",
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: "Example Guide", slug: "guides/example" },
-					],
+					label: "JavaScript",
+					autogenerate: { directory: "js" },
 				},
 				{
-					label: "Reference",
-					autogenerate: { directory: "reference" },
+					label: "Accessibility",
+					autogenerate: { directory: "accessibility" },
 				},
+				{
+					label: "Fonts",
+					autogenerate: { directory: "fonts" },
+				},
+				// {
+				// 	label: "Reference",
+				// 	autogenerate: { directory: "reference" },
+				// },
 			],
 		}),
 	],
