@@ -1,6 +1,8 @@
 ---
 title: Exciting JavaScript updates since 2020
 description: A detailed overview of modern JavaScript features added from 2020 onwards, including dynamic imports, optional chaining, and more.
+sidebar:
+  label: Updates since 2020
 ---
 
 JavaScript has been evolving faster than ever, with new features being added on a yearly release schedule instead of the larger combined updates like ES5 and ES6. Since 2020, many powerful and exciting features have been introduced that can significantly improve how we write and optimize our code.
