@@ -1,0 +1,14 @@
+name: "theo"
+handle: "theo"
+bio: "Tech enthusiast and content creator who loves sharing tutorials on web development and JavaScript."
+profileImage: "../../assets/authors/theo.png"
+website: "https://johndoe.dev"
+socialLinks:
+  twitter: "https://twitter.com/t3dotgg"
+  youtube: "https://www.youtube.com/@t3dotgg"
+  github: "https://github.com/t3dotgg"
+platforms:
+  - "YouTube"
+tags:
+  - "JavaScript"
+  - "YouTube"
