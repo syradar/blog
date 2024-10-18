@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  author: CollectionEntry<"authors">["id"];
+}
+
+// `post` will match your 'blog' collection schema type
+const { author } = Astro.props;
+// const authors = await getCollection("authors");
+const authorProfile = await getEntry("authors", author);
+const { data } = authorProfile;
+---
+
+<div class="author">
+  <div>
+    {
+      data.profileImage ? (
+        <Image
+          src={data.profileImage}
+          alt={`Profile picture of ${data.name}`}
+        />
+      ) : null
+    }
+    <!-- <img src={data.profileImage} alt={`Profile picture of ${data.name}`} /> -->
+  </div>
+  <div class="text">
+    <h2>
+      {data.name}
+    </h2>
+    <p>{data.bio}</p>
+  </div>
+</div>
+
+<style>
+  .author {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+  h2 {
+    color: red;
+    margin-bottom: 0.1em;
+  }
+  img {
+    border-radius: 9999px;
+  }
+</style>
+
+<!-- <pre>
+  {JSON.stringify(authors, null, 2)}
+</pre> -->
+<h1>
+  <pre>
+    {JSON.stringify(author, null, 2)}
+  </pre>
+  <pre>
+    {JSON.stringify(authorProfile, null, 2)}
+  </pre>
+</h1>
+<!-- <p>Author: {post.data.name}</p> -->
+
+<!-- <h2>You might also like:</h2> -->
+<!-- {relatedPosts.map((p) => <a href={p.slug}>{p.data.title}</a>)} -->
