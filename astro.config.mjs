@@ -30,6 +30,10 @@ export default defineConfig({
 					autogenerate: { directory: "js" },
 				},
 				{
+					label: "CSS",
+					autogenerate: { directory: "css" },
+				},
+				{
 					label: "Accessibility",
 					autogenerate: { directory: "accessibility" },
 				},
