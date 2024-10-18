@@ -41,10 +41,10 @@ export default defineConfig({
 					label: "Fonts",
 					autogenerate: { directory: "fonts" },
 				},
-				// {
-				// 	label: "Reference",
-				// 	autogenerate: { directory: "reference" },
-				// },
+				{
+					label: "Software",
+					autogenerate: { directory: "software" },
+				},
 			],
 			plugins: [starlightLinksValidator()],
 		}),
