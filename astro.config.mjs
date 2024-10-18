@@ -22,6 +22,10 @@ export default defineConfig({
 				// 	],
 				// },
 				{
+					label: "General",
+					autogenerate: { directory: "general" },
+				},
+				{
 					label: "JavaScript",
 					autogenerate: { directory: "js" },
 				},
