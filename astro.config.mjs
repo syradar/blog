@@ -14,13 +14,6 @@ export default defineConfig({
 				github: "https://github.com/syradar/blog",
 			},
 			sidebar: [
-				// {
-				// 	label: "Guides",
-				// 	items: [
-				// 		// Each item here is one entry in the navigation menu.
-				// 		{ label: "Example Guide", slug: "guides/example" },
-				// 	],
-				// },
 				{
 					label: "General",
 					autogenerate: { directory: "general" },
@@ -38,8 +31,8 @@ export default defineConfig({
 					autogenerate: { directory: "accessibility" },
 				},
 				{
-					label: "Fonts",
-					autogenerate: { directory: "fonts" },
+					label: "Design",
+					autogenerate: { directory: "design" },
 				},
 				{
 					label: "Software",

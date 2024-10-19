@@ -3,7 +3,14 @@ title: Forms
 description: Forms and related stuff
 ---
 
+## Documentation
+
+- [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData):
+
 ## Validation
+
+- [Constraint validation](https://developer.mozilla.org/en-US/docs/Web/HTML/Constraint_validation)
+- [ValidityState](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)
 
 ### Progressively Enhanced Form Validation
 

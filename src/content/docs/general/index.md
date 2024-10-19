@@ -4,6 +4,9 @@ description: Tips and links that have not been given a sub directory yet.
 ---
 
 - [Database Design for Google Calendar: a tutorial](https://kb.databasedesignbook.com/posts/google-calendar/)
+- [send](https://send.vis.ee/): Simple, private file sharing. Fork of Mozilla Send.
+- [DIGG Open Source on GitHub](https://github.com/DIGGSweden/): Swedish agency for Digital Government
+- [Diátaxis](https://diataxis.fr/): A systematic approach to technical documentation authoring.
 
 ## [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)
 
@@ -32,3 +35,20 @@ MDN Web Docs is an open-source, collaborative project documenting Web platform t
 - [Microsoft Edge](https://www.microsoft.com/en-us/edge/) (desktop)
 - [Google Chrome](https://www.google.com/intl/en/chrome/) (desktop)
 - [Google Chrome](https://play.google.com/store/apps/details?id=com.android.chrome&hl=en-US) (Android)
+
+## News, blogs and newsletters
+
+### Hacker News
+
+Hackers News is a news aggregation site where the users submit links, upvote and comment on those links. Many prominent developers from all kinds of companies, countries and backgrounds comment on links, including open source library authors and CEOs. Hacker News keeps the design old school and minimal, if you don't like it there are multiple apps and alternative frontends.
+
+- [Hacker News](https://news.ycombinator.com/news)
+- [Hackers](https://github.com/weiran/hackers): Minimal iOS app
+
+### Newsletters
+
+- [Smashing Magazine newsletter](https://www.smashingmagazine.com/the-smashing-newsletter/)
+- [Frontend Focus](https://frontendfoc.us/)
+- [tldr.tech](https://tldr.tech/)
+- [Node Weekly](https://nodeweekly.com/)
+- [React Status](https://react.statuscode.com/)

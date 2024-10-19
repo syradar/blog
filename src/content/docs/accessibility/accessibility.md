@@ -7,6 +7,10 @@ I got interested in accessibility by watching Microsoft design game controllers 
 
 ## Tools
 
+### Checklists
+
+- [MagnetaA11y](https://www.magentaa11y.com/web/)
+
 ### Browsers extensions
 
 - [WAVE](https://wave.webaim.org/)
@@ -23,6 +27,7 @@ I got interested in accessibility by watching Microsoft design game controllers 
 ## Testing accessibility
 
 - [Things to Do Before Asking “Is This Accessible?”](https://adrianroselli.com/2024/08/things-to-do-before-asking-is-this-accessible.html)
+- [Testing on mobile](https://www.a11y-collective.com/blog/mobile-accessibility/)
 
 ## Building accessible websites
 
