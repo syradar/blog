@@ -40,6 +40,10 @@ export default defineConfig({
 				},
 			],
 			plugins: [starlightLinksValidator()],
+			customCss: [
+				// Relative path to your custom CSS file
+				"./src/styles/custom.css",
+			],
 		}),
 	],
 });
