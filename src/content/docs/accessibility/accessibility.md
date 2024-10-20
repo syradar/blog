@@ -34,6 +34,22 @@ I got interested in accessibility by watching Microsoft design game controllers 
 
 ## Building accessible websites
 
+### WCAG
+
+Web Content Accessibility Guidelines is an international standard that explain how to make web content more accessible to people with disabilities.
+
+#### WCAG 2
+
+WCAG 2.2 is the current standard in use.
+
+- [WCAG 2 Overview](https://www.w3.org/WAI/standards-guidelines/wcag/)
+
+#### WCAG 3
+
+> WCAG 3 is currently an incomplete draft. WCAG 3 is intended to develop into a W3C Standard in a few years.
+
+- [WCAG 3 Introduction](https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/)
+
 ### Web Accessibility Initiative (WAI)
 
 > Strategies, standards, and supporting resources to help you make the Web more accessible to people with disabilities.
@@ -63,7 +79,7 @@ I got interested in accessibility by watching Microsoft design game controllers 
     - [EU Directive 2019/882 Swedish PDF](https://eur-lex.europa.eu/legal-content/SV/TXT/PDF/?uri=CELEX:32019L0882)
   - [Government Offices of Sweden: Implementation of the Accessibility Directive](https://www.regeringen.se/rattsliga-dokument/lagradsremiss/2022/08/genomforande-av-tillganglighetsdirektivet/): Swedish.
   - [Digin.nu: Introduction to the Accessibility Directive](https://digin.nu/lagkrav/introduktion-till-tillganglighetsdirektivet/): Swedish.
-- [ADA Web](https://www.ada.gov/resources/web-guidance/): The Americans with Disabilities Act's digital parts are similar to the EAA and
+- [ADA Web](https://www.ada.gov/resources/web-guidance/): The Americans with Disabilities Act's digital parts are similar to the EAA and WCAG 2 is often used as a benchmark for compliance.
 
 ## People
 
