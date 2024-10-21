@@ -13,5 +13,5 @@ Popover and anchor positioning are two new great CSS features for creating compo
 
 ## Reference
 
-- [MDN Web Docs on popover](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover)
+- [popover on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/popover)
 - [Popover Polyfill](https://github.com/oddbird/popover-polyfill)
