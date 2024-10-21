@@ -19,7 +19,7 @@ const books = bookModule.getBooks();
 console.log(books); // Output: Array of books
 ```
 
-[MDN Documentation on Dynamic Imports](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import)
+[Dynamic Imports on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/import)
 
 ### Regex: string.matchAll
 
@@ -37,7 +37,7 @@ for (const match of matches) {
 // Found page 5
 ```
 
-[MDN Documentation on `matchAll`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)
+[`matchAll` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/matchAll)
 
 ### `Promise.allSettled()`
 
@@ -51,7 +51,7 @@ const errors = allResults
   .map(p => p.reason);
   ```
 
-[MDN Documentation on `Promise.allSettled()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled)
+[`Promise.allSettled()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled)
 
 ### Nullish coalescing operator
 
@@ -65,7 +65,7 @@ const size = settings.size ?? 42;
 const size = settings.size || 42; 
 ```
 
-[MDN Documentation on Nullish Coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
+[Nullish Coalescing on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)
 
 ### Optional chaining
 
@@ -80,7 +80,7 @@ const zipCode = user.profile?.address?.zip ?? 'No Zip Code';
 console.log(zipCode); // Output: No Zip Code
 ```
 
-[MDN Documentation on Optional Chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+[Optional Chaining on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 
 ## 2021
 
@@ -95,7 +95,7 @@ const replaced = string.replaceAll("Javascript", "Typescript");
 console.log(replaced); // Typescript is awesome. Typescript rules!
 ```
 
-[MDN Documentation on `replaceAll()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
+[`replaceAll()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
 
 ### Private Methods
 
@@ -118,7 +118,7 @@ foo.showAge() // Uncaught TypeError: foo.showAge is not a function
 foo.#showAge() // Uncaught SyntaxError: reference to undeclared private field or method #showAge
 ```
 
-[MDN Documentation on Private Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties)
+[Private Methods on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties)
 
 ### `Promise.any()`
 
@@ -131,7 +131,7 @@ const firstResolved = await Promise.any(fetchPromises);
 console.log(firstResolved); // Logs the fastest resolved promise
 ```
 
-[MDN Documentation on `Promise.any()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any)
+[`Promise.any()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any)
 
 ### Numeric Separators
 
@@ -142,7 +142,7 @@ const budget = 1_000_000_000;
 console.log(budget === 1000000000); // true
 ```
 
-[MDN Documentation on Numeric Separators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#numeric_separators)
+[Numeric Separators on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#numeric_separators)
 
 ### Logical Assignment Operator
 
@@ -155,9 +155,9 @@ x &&= y;
 console.log(x); // 2 (x is reassigned if it’s truthy)
 ```
 
-- [MDN Documentation on Logical AND assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND_assignment)
-- [MDN Documentation on Logical OR assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR_assignment)
-- [MDN Documentation on Nullish coalescing assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_assignment)
+- [Logical AND assignment on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND_assignment)
+- [Logical OR assignment on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR_assignment)
+- [Nullish coalescing assignment on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_assignment)
 
 ## 2022
 
@@ -169,7 +169,7 @@ You can now use await directly at the top level of your modules, making asynchro
 await Promise.resolve(console.log('Hello from top-level await!'));
 ```
 
-[MDN Documentation on Top-level `await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await#top_level_await)
+[Top-level `await` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await#top_level_await)
 
 ### Private class fields
 
@@ -192,7 +192,7 @@ const foo = new Person();
 console.log(foo.firstName); // undefined
 ```
 
-[MDN Documentation on Private Fields](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties)
+[Private Fields on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_properties)
 
 ### Static class fields and methods
 
@@ -222,7 +222,7 @@ console.log(robot1.introduce()); // Output: I am Cyberdyne Systems T-101
 
 ```
 
-[MDN Documentation on Static Fields and Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static)
+[Static Fields and Methods on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static)
 
 ### Error.cause
 
@@ -247,7 +247,7 @@ try{
 }
 ```
 
-[MDN Documentation on `Error.cause`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause)
+[`Error.cause` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/cause)
 
 ### `Array.at()`, `String.at()`
 
@@ -263,7 +263,7 @@ const fruit = 'kiwi';
 console.log(fruit.at(-1)); // Output: i
 ```
 
-[MDN Documentation on `.at()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at)
+[`.at()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/at)
 
 ### `Object.hasOwn()`
 
@@ -283,7 +283,7 @@ if (Object.hasOwn(object, 'foo')) {
 }
 ```
 
-[MDN Documentation on `Object.hasOwn()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn)
+[`Object.hasOwn()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn)
 
 ## 2023
 
@@ -305,8 +305,8 @@ const lastIndex = users.findLastIndex(user => user.age > 18);
 console.log(lastIndex); // Output: 2
 ```
 
-- [MDN Documentation on `findLast()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast)
-- [MDN Documentation on `findLastIndex()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex)
+- [`findLast()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast)
+- [`findLastIndex()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex)
 
 ### `Array.toReversed()`, `Array.toSorted()`, `Array.toSpliced(`)
 
@@ -320,9 +320,9 @@ console.log(prime) // [13,7,17,2]; // Original array remains unchanged
 console.log(sortPrime) // [2,7,13,17];
 ```
 
-- [MDN Documentation on `toReversed()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed)
-- [MDN Documentation on `toSorted()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted)
-- [MDN Documentation on `toSpliced()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced)
+- [`toReversed()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toReversed)
+- [`toSorted()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted)
+- [`toSpliced()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced)
 
 ### `Array.with(index, value)`
 
@@ -336,7 +336,7 @@ console.log(usernames); // ['user1', 'user2', 'user3'] - Original array remains 
 console.log(updatedUsernames); // ['user1', 'newUser', 'user3']
 ```
 
-[MDN Documentation on `with()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with)
+[`with()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/with)
 
 <!-- ## 2024
 ### Records and Tuples
