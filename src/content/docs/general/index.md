@@ -7,6 +7,7 @@ description: Tips and links that have not been given a sub directory yet.
 - [send](https://send.vis.ee/): Simple, private file sharing. Fork of Mozilla Send.
 - [DIGG Open Source on GitHub](https://github.com/DIGGSweden/): Swedish agency for Digital Government
 - [Diátaxis](https://diataxis.fr/): A systematic approach to technical documentation authoring.
+- [Free Public APIs](https://www.freepublicapis.com/): Tested daily.
 
 ## [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)
 
