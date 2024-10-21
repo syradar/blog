@@ -17,6 +17,7 @@ I got interested in accessibility by watching Microsoft design game controllers 
 ### Browsers extensions
 
 - [WAVE](https://wave.webaim.org/)
+- [SiteImprove](https://www.siteimprove.com/integrations/browser-extensions/)
 - [IBM Equal Access Accessibility Checker](https://www.ibm.com/able/toolkit/tools#develop)
 - [Axe](https://www.deque.com/axe/)
 
@@ -26,6 +27,11 @@ I got interested in accessibility by watching Microsoft design game controllers 
 - [JAWS](https://www.freedomscientific.com/products/software/jaws/)
 - Apple VoiceOver
 - Android TalkBack
+
+### Web tools
+
+- [Tanaguru Contrast Finder](https://contrast-finder.tanaguru.com/)
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
 
 ## Testing accessibility
 
