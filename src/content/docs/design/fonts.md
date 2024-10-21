@@ -11,6 +11,7 @@ Typography is a crucial part of web development, impacting readability and the o
 - [typespiration](https://typespiration.com/): Font combinations and color palettes
 - [fontpair](https://www.fontpair.co/): Font pairings
 - [Beautiful Webtype](https://beautifulwebtype.com/): Guide to Only the Best Open-Source Typefaces
+- [Google Webfonts Helper](https://gwfh.mranftl.com/fonts): A Hassle-Free Way to Self-Host Google Fonts.
 
 ## Monospace Web
 
