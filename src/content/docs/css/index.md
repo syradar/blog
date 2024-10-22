@@ -1,6 +1,6 @@
 ---
 title: CSS
-description: General CSS resources
+description: Explore essential CSS resources, from layout techniques to modern features and performance tips.
 ---
 
 - [What you need to know about modern CSS](https://frontendmasters.com/blog/what-you-need-to-know-about-modern-css-spring-2024-edition/)

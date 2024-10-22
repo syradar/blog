@@ -1,6 +1,6 @@
 ---
 title: Software
-description: Software and website that makes development easier and more fun.
+description: Useful software and websites to make development more efficient and enjoyable.
 ---
 
 ## General software

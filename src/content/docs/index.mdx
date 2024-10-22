@@ -1,31 +1,41 @@
 ---
-title: Collection of web dev resources
+title: Curated Web Development Resources
 description: Syradar's collection of web resources.
 template: splash
 hero:
   tagline:  A curated list of guides, links, and experts that have significantly shaped my web development journey.
-  # image:
-  #   file: ../../assets/houston.webp
+  image:
+    file: "../../assets/la-surprise.webp"
+    alt: "Joseph Ducreux: La Surprise"
   actions:
-    - text: Accessibility
-      link: /blog/accessibility/accessibility
+    - text: Start with General Resources
+      link: /blog/general/
       icon: right-arrow
-    - text: Fonts & Typography
-      link: /blog/fonts/fonts
-      icon: right-arrow
-      variant: minimal
+    - text: View Categories
+      link: "#categories"
+      variant: secondary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, Icon, LinkCard } from '@astrojs/starlight/components';
 
-{/* ## Next steps */}
+<h2 id="categories">Categories</h2>
 
-<CardGrid stagger>
+<CardGrid>
+	<LinkCard title="JavaScript" href="/blog/js/" description="Guides, tutorials, and insights into modern JavaScript techniques and best practices."/>
+	<LinkCard title="CSS" href="/blog/css/" description="Explore CSS resources, from layout techniques to modern features and performance tips." />
+	<LinkCard title="Accessibility" href="/blog/accessibility/" description="Resources and tools for building, testing, and improving accessible websites for all users." />
+	<LinkCard title="Design" href="/blog/design/" description="Articles, resources, and insights into web design, design systems, and UI components."/>
+	<LinkCard title="Software" href="/blog/software/" description="Useful software and websites to make development more efficient and enjoyable."/>
+</CardGrid> 
+
+<h2>Help or need help</h2>
+
+<CardGrid>
 	<Card title="Create content" icon="pencil">
-		Help me build this site by making a contributions to the [repo](https://github.com/syradar/blog).
+		Want to contribute? Help us grow by adding content or improvements to the [GitHub repo](https://github.com/syradar/blog).
 	</Card>
 	<Card title="Need Help or Looking for Work?" icon="external">
-		Looking for web development services or expert advice? Get in touch with us at [DevCore](https://www.devcore.se/).
+		Looking for expert web development services or career opportunities? Reach out to us at [DevCore](https://www.devcore.se/).
 	</Card>
 
 	
@@ -39,3 +49,9 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 		Learn more in [the Starlight Docs](https://starlight.astro.build/).
 	</Card> */}
 </CardGrid> 
+
+<br/>
+<br/>
+<br/>
+<br/>
+Splash image: [Joseph Ducreux: La Surprise](https://collection.nationalmuseum.se/sv/collection/item/230178/), between 1791 and 1799, Nationalmuseum (Photography: Anna Danielsson).

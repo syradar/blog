@@ -1,6 +1,6 @@
 ---
 title: Accessibility
-description: Resources related to building accessible website, testing them and link to documentation.
+description: Resources and tools for building, testing, and improving accessible websites for all users.
 ---
 
 I got interested in accessibility by watching Microsoft design game controllers for people that can't use their hands and an [ad by Apple](https://www.youtube.com/watch?v=XB4cjbYywqg) showcasing tools to that help people do what they love.
