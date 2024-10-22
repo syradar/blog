@@ -1,6 +1,6 @@
 ---
 title: Design
-description: Resources, articles and thoughts on design.
+description: Articles, resources, and insights into web design, design systems, and UI components.
 ---
 
 - [Designing depth](https://rauno.me/craft/depth)

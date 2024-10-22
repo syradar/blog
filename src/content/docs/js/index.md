@@ -1,6 +1,6 @@
 ---
 title: JavaScript
-description: Guides, tutorials, articles on JavaScript
+description: Guides, tutorials, and insights into modern JavaScript techniques and best practices.
 ---
 
 - [Patterns on memory efficient DOM manipulation](https://frontendmasters.com/blog/patterns-for-memory-efficient-dom-manipulation/)
