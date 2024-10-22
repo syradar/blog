@@ -13,5 +13,6 @@ kbd {
 	margin: 0 !important;
 }
 
-html[data-theme="dark"] kbd {
+@view-transition {
+	navigation: auto;
 }
