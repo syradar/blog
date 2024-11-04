@@ -9,3 +9,38 @@ main kbd {
 @view-transition {
 	navigation: auto;
 }
+
+main :where(h1, h2, h3, h4, h5, h6).anchor {
+	.anchor-link {
+		color: var(--sl-color-text);
+		text-decoration: none;
+		background-repeat: no-repeat;
+		background-image: linear-gradient(
+			var(--sl-color-gray-5),
+			var(--sl-color-gray-5)
+		);
+		background-size: 0% 2px;
+		background-position: 0 100%;
+		transition: background-size 200ms ease-in-out;
+
+		span {
+			opacity: 0;
+			transition: opacity 200ms 100ms ease-in-out;
+			font-size: 0.75em;
+			margin-left: 0.25em;
+			vertical-align: middle;
+			padding-bottom: 0.125em;
+			line-height: 1.2em;
+			color: var(--sl-color-gray-5);
+		}
+
+		&:where(:hover, :focus) {
+			text-decoration: none;
+			background-size: 100% 2px;
+
+			span {
+				opacity: 1;
+			}
+		}
+	}
+}

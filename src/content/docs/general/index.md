@@ -9,7 +9,9 @@ description: Tips and links that have not been given a sub directory yet.
 - [Diátaxis](https://diataxis.fr/): A systematic approach to technical documentation authoring.
 - [Free Public APIs](https://www.freepublicapis.com/): Tested daily.
 
-## [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)
+## MDN Web Docs
+
+[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web)
 
 MDN Web Docs is an open-source, collaborative project documenting Web platform technologies, including CSS, HTML, JavaScript, and Web APIs. Content is maintained by Mozilla, Google employees, volunteers, Microsoft, Google, and Samsung.
 
