@@ -53,3 +53,12 @@ Hackers News is a news aggregation site where the users submit links, upvote and
 - [tldr.tech](https://tldr.tech/)
 - [Node Weekly](https://nodeweekly.com/)
 - [React Status](https://react.statuscode.com/)
+
+## End of Life and Long Term Support
+
+**EOL (End of Life)** refers to the point when a software version or product will no longer receive updates, security patches, or support from its developers. Many software projects offer **LTS (Long Term Support)** versions, which are maintained for a longer period, providing critical updates without frequent feature changes.
+
+- [endoflife.date](https://endoflife.date): Open source website that aggregates support life times from various software projects.
+- [.NET Support](https://endoflife.date/dotnet)
+- [Umbraco CMS Support](https://endoflife.date/umbraco)
+- [Matomo Support](https://endoflife.date/matomo)
