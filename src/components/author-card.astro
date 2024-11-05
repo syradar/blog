@@ -38,8 +38,13 @@ const { data } = authorProfile;
   .author {
     display: grid;
     grid-template-columns: 4rem 1fr;
-    align-items: center;
+    align-items: start;
     gap: 1rem;
+    margin-top: 0 !important;
+
+    .text {
+      margin-top: 0;
+    }
   }
   h2 {
     color: red;
@@ -53,14 +58,14 @@ const { data } = authorProfile;
 <!-- <pre>
   {JSON.stringify(authors, null, 2)}
 </pre> -->
-<h1>
+<!-- <h1>
   <pre>
     {JSON.stringify(author, null, 2)}
   </pre>
   <pre>
     {JSON.stringify(authorProfile, null, 2)}
   </pre>
-</h1>
+</h1> -->
 <!-- <p>Author: {post.data.name}</p> -->
 
 <!-- <h2>You might also like:</h2> -->
