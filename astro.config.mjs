@@ -15,6 +15,8 @@ export default defineConfig({
 			social: {
 				github: "https://github.com/syradar/blog",
 			},
+			lastUpdated: true,
+			credits: true,
 			sidebar: [
 				{
 					label: "General",
