@@ -1,6 +1,6 @@
 ---
 title: General
-description: Tips and links that have not been given a sub directory yet.
+description: Helpful tips, resources, and links on various topics that don’t fit into specific categories yet.
 ---
 
 - [Database Design for Google Calendar: a tutorial](https://kb.databasedesignbook.com/posts/google-calendar/)
