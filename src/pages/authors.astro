@@ -1,0 +1,21 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import AuthorCard from "../components/author-card.astro";
+---
+
+<StarlightPage frontmatter={{ title: "Authors" }}>
+  <p>This is a custom page with a custom component:</p>
+  <div class="authors">
+    <AuthorCard author="theo" />
+    <AuthorCard author="dannorth" />
+  </div>
+</StarlightPage>
+---
+
+<style>
+  .authors {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+</style>

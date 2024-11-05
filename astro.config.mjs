@@ -40,6 +40,10 @@ export default defineConfig({
 					label: "Software",
 					autogenerate: { directory: "software" },
 				},
+				// {
+				// 	label: "Authors",
+				// 	link: "/authors",
+				// },
 			],
 			plugins: [starlightLinksValidator()],
 			customCss: [

@@ -1,0 +1,13 @@
+name: "Dan North"
+handle: "tastapod"
+bio: "Daniel has been coaching, coding and consulting for over thirty years, with a focus on applying systems thinking and simple technology to solve complex business problems."
+profileImage: "../../assets/authors/dannorth.webp"
+website: "https://dannorth.net"
+socialLinks:
+  twitter: "https://x.com/tastapod"
+  github: "https://github.com/t3dotgg"
+platforms:
+  - "YouTube"
+tags:
+  - "Conferences"
+  - "Talks"
