@@ -91,3 +91,7 @@ WCAG 2.2 is the current standard in use.
 
 - [Adrian Roselli](https://adrianroselli.com/): Expert on all things web and fights for accessibility.
   - [I Don’t Care What Google or Apple or Whoever Did](https://adrianroselli.com/2020/03/i-dont-care-what-google-or-apple-or-whomever-did.html): Usability issues from the big players.
+
+## Talks
+
+- [Ryan Magoon - Building for Disabled Power Users](https://www.youtube.com/watch?v=JtPibzfhJaI)

@@ -3,6 +3,8 @@ title: Layout
 description: Resources for working with CSS layouts.
 ---
 
+- [Rebuilding a featured news section with modern CSS: Vox news](https://ishadeed.com/article/rebuild-featured-news-modern-css): By Ahmad Shadeed.
+
 ## CSS Grid
 
 - [CSS grid layout on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
