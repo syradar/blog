@@ -6,7 +6,6 @@ description: Helpful tips, resources, and links on various topics that don’t f
 - [Database Design for Google Calendar: a tutorial](https://kb.databasedesignbook.com/posts/google-calendar/)
 - [send](https://send.vis.ee/): Simple, private file sharing. Fork of Mozilla Send.
 - [DIGG Open Source on GitHub](https://github.com/DIGGSweden/): Swedish agency for Digital Government
-- [Diátaxis](https://diataxis.fr/): A systematic approach to technical documentation authoring.
 - [Free Public APIs](https://www.freepublicapis.com/): Tested daily.
 
 ## MDN Web Docs
