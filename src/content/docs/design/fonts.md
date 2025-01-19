@@ -12,6 +12,7 @@ Typography is a crucial part of web development, impacting readability and the o
 - [fontpair](https://www.fontpair.co/): Font pairings
 - [Beautiful Webtype](https://beautifulwebtype.com/): Guide to Only the Best Open-Source Typefaces
 - [Google Webfonts Helper](https://gwfh.mranftl.com/fonts): A Hassle-Free Way to Self-Host Google Fonts.
+- [Font Performance Resources](https://github.com/mandymichael/font-performance-resources/blob/main/README.md): From [Mandy Michael](https://github.com/mandymichael)'s (lead developer Octopus Deploy) [performance.now() 2024 talk](https://www.youtube.com/watch?v=P4378iO4oBI)
 
 ## Monospace Web
 
