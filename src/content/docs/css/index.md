@@ -7,6 +7,7 @@ description: Explore essential CSS resources, from layout techniques to modern f
 - [The Undeniable Utility Of CSS :has](https://www.joshwcomeau.com/css/has/)
 - [@property: Next-gen CSS variables now with universal browser support](https://web.dev/blog/at-property-baseline)
 - [Animated multiline link underlines](https://dannyguo.medium.com/animated-multiline-link-underlines-with-css-abe07f3d6aee): Like used here on this site together with [automatic heading anchor links](/blog/software/astro/).
+- [Drawing made in pure CSS](https://github.com/cyanharlow/purecss-francine)
 
 ## New and old pseudo selectors
 
