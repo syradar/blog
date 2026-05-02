@@ -206,12 +206,6 @@ const initialFilters = {
     const errorStateNode = errorState;
     const toggleFilters = toggleFiltersButton;
 
-    // On startup: expand on desktop, collapse on mobile
-    const desktopMq = window.matchMedia("(min-width: 40rem)");
-    const expanded = String(desktopMq.matches);
-    toggleFilters.setAttribute("aria-pressed", expanded);
-    toggleFilters.setAttribute("aria-expanded", expanded);
-
     const payload = dataNode.getAttribute("data-payload") ?? "{}";
     const data = JSON.parse(payload) as Partial<ExplorerPayload>;
     const records = (data.records ?? []) as LinksExplorerRecord[];
