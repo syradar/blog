@@ -1,0 +1,67 @@
+---
+interface Props {
+  tag: string;
+  static?: boolean;
+}
+
+const { tag, static: isStatic = false } = Astro.props;
+---
+
+{
+  isStatic ? (
+    <span class="tag-chip">{tag}</span>
+  ) : (
+    <button
+      type="button"
+      class="tag-chip"
+      data-tag-chip={tag}
+      title={`Filter by tag: ${tag}`}
+    >
+      {tag}
+    </button>
+  )
+}
+
+<style>
+  .tag-chip {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 999px;
+    padding-inline: 0.55rem;
+    height: 1.5rem;
+    justify-items: center;
+    background: color-mix(
+      in oklab,
+      var(--sl-color-bg),
+      var(--sl-color-gray-6) 22%
+    );
+    color: var(--sl-color-gray-2);
+    font-size: 0.875rem;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  button.tag-chip {
+    cursor: pointer;
+    transition: all 140ms ease;
+    user-select: auto;
+  }
+
+  button.tag-chip:hover,
+  button.tag-chip:focus-visible {
+    background: color-mix(
+      in oklab,
+      var(--sl-color-bg),
+      var(--sl-color-gray-5) 35%
+    );
+    color: var(--sl-color-gray-1);
+    border-color: var(--sl-color-gray-4);
+  }
+
+  button.tag-chip:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+</style>

@@ -1,0 +1,114 @@
+{
+  "title": "Links for 2026 W16",
+  "week": "2026-W16",
+  "publishedAt": "2026-04-17",
+  "links": [
+    {
+      "title": "Squash and stretch",
+      "url": "https://www.joshwcomeau.com/animation/squash-and-stretch/?from=newsletter",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Animation"
+      ]
+    },
+    {
+      "title": "SVG filters guide: getting started with the basics",
+      "url": "https://frontendmasters.com/blog/svg-filters-guide-getting-started-with-the-basics/",
+      "category": "Frontend",
+      "tags": [
+        "SVG",
+        "Filters",
+        "CSS"
+      ]
+    },
+    {
+      "title": "Container query typography systems",
+      "url": "https://mattwaler.com/blog/container-query-typography-systems/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Typography",
+        "Container Queries"
+      ]
+    },
+    {
+      "title": "Uses for nested promises",
+      "url": "https://blog.jcoglan.com/2026/03/23/uses-for-nested-promises/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Promises",
+        "Async"
+      ]
+    },
+    {
+      "title": "Hanging promises for control flow",
+      "url": "https://www.inngest.com/blog/hanging-promises-for-control-flow",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Promises"
+      ]
+    },
+    {
+      "title": "Parse, don’t validate TypeScript",
+      "url": "https://cekrem.github.io/posts/parse-dont-validate-typescript/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Validation",
+        "Types"
+      ]
+    },
+    {
+      "title": "The Intl API: the best browser API you’re not using",
+      "url": "https://polypane.app/blog/the-intl-api-the-best-browser-api-youre-not-using/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Internationalization",
+        "Browser API"
+      ]
+    },
+    {
+      "title": "JSON Alexander",
+      "url": "https://github.com/wesbos/JSON-Alexander",
+      "category": "Frontend",
+      "tags": [
+        "JSON",
+        "Data Visualization",
+        "Tools"
+      ]
+    },
+    {
+      "title": "DaVinci Resolve Photo",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve/photo",
+      "category": "Other",
+      "tags": [
+        "Photo Editing",
+        "Design",
+        "Tools"
+      ]
+    },
+    {
+      "title": "MDN front-end deep dive",
+      "url": "https://developer.mozilla.org/en-US/blog/mdn-front-end-deep-dive/",
+      "category": "Frontend",
+      "tags": [
+        "Architecture",
+        "MDN"
+      ]
+    },
+    {
+      "title": "OKLCHanger",
+      "url": "https://marketplace.visualstudio.com/items?itemName=starbist.oklchanger#oklchanger",
+      "category": "Frontend",
+      "tags": [
+        "VS Code",
+        "Colors",
+        "OKLCH"
+      ]
+    }
+  ]
+}

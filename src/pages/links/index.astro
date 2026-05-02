@@ -1,0 +1,657 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { getCollection } from "astro:content";
+import LinkCard from "../../components/link-card.astro";
+import CategoryButton from "../../components/CategoryButton.astro";
+import { linkCategories, type LinkCategory } from "../../lib/linkCategories";
+import {
+  getFacetOptions,
+  toLinksExplorerRecords,
+} from "../../lib/links-explorer";
+
+const linkWeeks = await getCollection("linkWeeks");
+const records = toLinksExplorerRecords(linkWeeks);
+const facets = getFacetOptions(records);
+
+const initialFilters = {
+  q: "",
+  categories: [] as LinkCategory[],
+  tag: "",
+  week: "",
+};
+---
+
+<StarlightPage frontmatter={{ title: "Link Collection" }}>
+  <p class="page-intro">
+    Explore every link across issues, then narrow by search text, category, tag,
+    or Link Week.
+  </p>
+
+  <p class="archive-link">
+    Prefer browsing by issue? Visit
+    <a href="/blog/links/weeks">Weekly Links Archive</a>.
+  </p>
+
+  <section class="controls" aria-label="Links Explorer filters">
+    <label class="control-search">
+      <span>Search</span>
+      <input
+        id="q"
+        name="q"
+        type="search"
+        placeholder="Search links"
+        value=""
+      />
+    </label>
+
+    <label class="control-tag">
+      <span>Tag</span>
+      <select id="tag" name="tag">
+        <option value="">All tags</option>
+        {facets.tags.map((tag) => <option value={tag}>{tag}</option>)}
+      </select>
+    </label>
+
+    <fieldset class="category-filter-group control-categories">
+      <legend>Categories</legend>
+      <div class="category-buttons" id="category-buttons">
+        {
+          linkCategories.map((category) => (
+            <CategoryButton category={category} />
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <label class="control-week">
+      <span>Week</span>
+      <select id="week" name="week">
+        <option value="">All weeks</option>
+        {
+          facets.weeks.map(([weekKey, weekTitle]) => (
+            <option value={weekKey}>{weekTitle}</option>
+          ))
+        }
+      </select>
+    </label>
+
+    <button id="reset-filters" type="button" class="control-reset">
+      Reset filters
+    </button>
+  </section>
+
+  <p class="results-summary" id="results-summary">
+    Showing {records.length} of {records.length} links.
+  </p>
+
+  <ul class="cards-grid" id="results-grid">
+    {
+      records.map((record) => (
+        <li data-link-id={record.id}>
+          <LinkCard
+            title={record.title}
+            url={record.url}
+            categories={[record.category]}
+            tags={record.tags}
+          />
+        </li>
+      ))
+    }
+  </ul>
+
+  <p class="empty-state" id="empty-state" hidden>
+    No links match your current filters. Try broadening your search or reset all
+    filters.
+  </p>
+
+  <p
+    class="error-state"
+    id="error-state"
+    hidden
+    role="status"
+    aria-live="polite"
+  >
+    Search is temporarily unavailable. Showing all links. Please refresh the
+    page.
+  </p>
+
+  <div
+    id="links-explorer-data"
+    data-payload={JSON.stringify({ records, initialFilters })}
+    hidden
+  >
+  </div>
+
+  <script>
+    import { createLinksIndex, searchLinks } from "../../lib/links-search";
+    import {
+      isLinkCategory,
+      type LinkCategory,
+    } from "../../lib/linkCategories";
+    import type { LinksExplorerRecord } from "../../lib/links-explorer";
+    import type { ExplorerFilters } from "../../lib/links-search";
+
+    type ExplorerPayload = {
+      records: LinksExplorerRecord[];
+      initialFilters: ExplorerFilters;
+    };
+
+    const dataNode = document.getElementById("links-explorer-data");
+    const searchInput = document.getElementById("q") as HTMLInputElement | null;
+    const categoryButtonsRoot = document.getElementById(
+      "category-buttons",
+    ) as HTMLDivElement | null;
+    const tagInput = document.getElementById("tag") as HTMLSelectElement | null;
+    const weekInput = document.getElementById(
+      "week",
+    ) as HTMLSelectElement | null;
+    const resetButton = document.getElementById(
+      "reset-filters",
+    ) as HTMLButtonElement | null;
+    const summary = document.getElementById(
+      "results-summary",
+    ) as HTMLParagraphElement | null;
+    const emptyState = document.getElementById(
+      "empty-state",
+    ) as HTMLParagraphElement | null;
+    const errorState = document.getElementById(
+      "error-state",
+    ) as HTMLParagraphElement | null;
+
+    if (
+      !dataNode ||
+      !searchInput ||
+      !categoryButtonsRoot ||
+      !tagInput ||
+      !weekInput ||
+      !resetButton ||
+      !summary ||
+      !emptyState ||
+      !errorState
+    ) {
+      throw new Error("Links Explorer controls are missing from the page.");
+    }
+
+    const searchControl = searchInput;
+    const categoryButtons = [
+      ...categoryButtonsRoot.querySelectorAll<HTMLButtonElement>(
+        "[data-category-button]",
+      ),
+    ];
+    const tagControl = tagInput;
+    const weekControl = weekInput;
+    const resetControl = resetButton;
+    const summaryNode = summary;
+    const emptyStateNode = emptyState;
+    const errorStateNode = errorState;
+
+    const payload = dataNode.getAttribute("data-payload") ?? "{}";
+    const data = JSON.parse(payload) as Partial<ExplorerPayload>;
+    const records = (data.records ?? []) as LinksExplorerRecord[];
+    const initialFilters: ExplorerFilters = {
+      q: data.initialFilters?.q ?? "",
+      categories: (data.initialFilters?.categories ?? []).filter(
+        isLinkCategory,
+      ),
+      tag: data.initialFilters?.tag ?? "",
+      week: data.initialFilters?.week ?? "",
+    };
+
+    function getSelectedCategories(): LinkCategory[] {
+      const selected: LinkCategory[] = [];
+
+      for (const button of categoryButtons) {
+        const category = button.dataset.categoryButton;
+        if (!category || !isLinkCategory(category)) {
+          continue;
+        }
+
+        if (button.getAttribute("aria-pressed") === "true") {
+          selected.push(category);
+        }
+      }
+
+      return selected;
+    }
+
+    function setSelectedCategories(categories: LinkCategory[]): void {
+      const selected = new Set(categories);
+
+      for (const button of categoryButtons) {
+        const category = button.dataset.categoryButton;
+        if (!category || !isLinkCategory(category)) {
+          button.setAttribute("aria-pressed", "false");
+          continue;
+        }
+
+        button.setAttribute(
+          "aria-pressed",
+          selected.has(category) ? "true" : "false",
+        );
+      }
+    }
+
+    const entries: Array<[string, HTMLElement]> = [];
+    for (const node of document.querySelectorAll<HTMLElement>(
+      "[data-link-id]",
+    )) {
+      const id = node.dataset.linkId;
+      if (id) {
+        entries.push([id, node]);
+      }
+    }
+    const nodesById = new Map<string, HTMLElement>(entries);
+
+    function getFiltersFromUrl(): ExplorerFilters {
+      const params = new URLSearchParams(window.location.search);
+
+      return {
+        q: params.get("q") ?? "",
+        categories: params
+          .getAll("category")
+          .filter((category): category is LinkCategory =>
+            isLinkCategory(category),
+          ),
+        tag: params.get("tag") ?? "",
+        week: params.get("week") ?? "",
+      };
+    }
+
+    function setControlValues(filters: ExplorerFilters): void {
+      searchControl.value = filters.q;
+      setSelectedCategories(filters.categories);
+      tagControl.value = filters.tag;
+      weekControl.value = filters.week;
+    }
+
+    function toUrl(filters: ExplorerFilters): string {
+      const params = new URLSearchParams();
+
+      if (filters.q) {
+        params.set("q", filters.q);
+      }
+
+      for (const category of filters.categories) {
+        params.append("category", category);
+      }
+
+      if (filters.tag) {
+        params.set("tag", filters.tag);
+      }
+
+      if (filters.week) {
+        params.set("week", filters.week);
+      }
+
+      const query = params.toString();
+      return query
+        ? `${window.location.pathname}?${query}`
+        : window.location.pathname;
+    }
+
+    function showVisibleRecords(visibleIds: Set<string>): void {
+      for (const [id, node] of nodesById.entries()) {
+        const isVisible = visibleIds.has(id);
+        node.hidden = !isVisible;
+        node.setAttribute("aria-hidden", isVisible ? "false" : "true");
+      }
+    }
+
+    function setSummary(totalVisible: number): void {
+      summaryNode.textContent = `Showing ${totalVisible} of ${records.length} links.`;
+      emptyStateNode.hidden = totalVisible !== 0;
+    }
+
+    function readControls(): ExplorerFilters {
+      return {
+        q: searchControl.value.trim(),
+        categories: getSelectedCategories(),
+        tag: tagControl.value,
+        week: weekControl.value,
+      };
+    }
+
+    function setInteractiveEnabled(enabled: boolean): void {
+      searchControl.disabled = !enabled;
+      for (const button of categoryButtons) {
+        button.disabled = !enabled;
+      }
+      tagControl.disabled = !enabled;
+      weekControl.disabled = !enabled;
+      resetControl.disabled = !enabled;
+    }
+
+    function showRuntimeError(): void {
+      errorStateNode.hidden = false;
+      emptyStateNode.hidden = true;
+      summaryNode.textContent = `Showing ${records.length} of ${records.length} links.`;
+      showVisibleRecords(new Set(records.map((record) => record.id)));
+      setInteractiveEnabled(false);
+    }
+
+    function clearRuntimeError(): void {
+      errorStateNode.hidden = true;
+      setInteractiveEnabled(true);
+    }
+
+    let index: Awaited<ReturnType<typeof createLinksIndex>> | null = null;
+    try {
+      index = await createLinksIndex(records);
+      clearRuntimeError();
+    } catch (error) {
+      console.error("Links Explorer: failed to initialize search index", error);
+      showRuntimeError();
+    }
+
+    async function applyFilters(
+      filters: ExplorerFilters,
+      updateUrl = true,
+    ): Promise<void> {
+      if (!index) {
+        showRuntimeError();
+        return;
+      }
+
+      try {
+        const result = await searchLinks(index, records, filters);
+        const visibleIds = new Set(result.records.map((record) => record.id));
+
+        showVisibleRecords(visibleIds);
+        setSummary(result.total);
+        errorStateNode.hidden = true;
+
+        if (updateUrl) {
+          history.replaceState(null, "", toUrl(filters));
+        }
+      } catch (error) {
+        console.error("Links Explorer: failed to apply filters", error);
+        showRuntimeError();
+      }
+    }
+
+    function resetFilters(): void {
+      const filters = { ...initialFilters };
+      setControlValues(filters);
+      void applyFilters(filters);
+    }
+
+    if (index) {
+      setControlValues(getFiltersFromUrl());
+      await applyFilters(readControls(), false);
+
+      searchControl.addEventListener("input", () => {
+        void applyFilters(readControls());
+      });
+
+      for (const button of categoryButtons) {
+        button.addEventListener("click", () => {
+          const category = button.dataset.categoryButton;
+          if (!category || !isLinkCategory(category)) {
+            return;
+          }
+
+          const currentCategories = getSelectedCategories();
+          const nextCategories = currentCategories.includes(category)
+            ? currentCategories.filter((c) => c !== category)
+            : [...currentCategories, category];
+
+          setSelectedCategories(nextCategories);
+          void applyFilters({
+            q: searchControl.value.trim(),
+            categories: nextCategories,
+            tag: tagControl.value,
+            week: weekControl.value,
+          });
+        });
+      }
+
+      tagControl.addEventListener("change", () => {
+        void applyFilters(readControls());
+      });
+
+      weekControl.addEventListener("change", () => {
+        void applyFilters(readControls());
+      });
+
+      // Event delegation for category chips on cards
+      document.addEventListener("click", (event) => {
+        const target = event.target as HTMLElement;
+        const categoryChip = target.closest(
+          "[data-category-chip]",
+        ) as HTMLButtonElement | null;
+
+        if (categoryChip) {
+          const category = categoryChip.dataset.categoryChip;
+          if (category && isLinkCategory(category)) {
+            const currentCategories = getSelectedCategories();
+            const nextCategories = currentCategories.includes(category)
+              ? currentCategories.filter((c) => c !== category)
+              : [...currentCategories, category];
+
+            setSelectedCategories(nextCategories);
+            void applyFilters({
+              q: searchControl.value.trim(),
+              categories: nextCategories,
+              tag: tagControl.value,
+              week: weekControl.value,
+            });
+          }
+        }
+      });
+
+      // Event delegation for tag chips on cards
+      document.addEventListener("click", (event) => {
+        const target = event.target as HTMLElement;
+        const tagChip = target.closest(
+          "[data-tag-chip]",
+        ) as HTMLButtonElement | null;
+
+        if (tagChip) {
+          const tag = tagChip.dataset.tagChip;
+          if (tag) {
+            // Toggle: if this tag is selected, clear it; otherwise select it
+            if (tagControl.value === tag) {
+              tagControl.value = "";
+            } else {
+              tagControl.value = tag;
+            }
+            void applyFilters(readControls());
+          }
+        }
+      });
+
+      resetControl.addEventListener("click", () => {
+        resetFilters();
+      });
+
+      window.addEventListener("popstate", () => {
+        const filters = getFiltersFromUrl();
+        setControlValues(filters);
+        void applyFilters(filters, false);
+      });
+    }
+  </script>
+</StarlightPage>
+
+<style>
+  .page-intro {
+    margin: 0 0 0.25rem;
+  }
+
+  .archive-link {
+    margin: 0 0 1rem;
+  }
+
+  .controls {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+    margin: 0 0 1rem;
+    grid-template-areas:
+      "search"
+      "categories"
+      "tag"
+      "week"
+      "reset";
+  }
+
+  .controls label {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .category-filter-group {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .category-filter-group legend {
+    padding: 0;
+    font-size: 0.9rem;
+    color: var(--sl-color-gray-3);
+    font-weight: 600;
+  }
+
+  .category-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 4.35rem;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 30rem) {
+    .category-buttons {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .control-search {
+    grid-area: search;
+  }
+
+  .control-tag {
+    grid-area: tag;
+  }
+
+  .control-categories {
+    grid-area: categories;
+  }
+
+  .control-week {
+    grid-area: week;
+  }
+
+  .control-reset {
+    grid-area: reset;
+  }
+
+  .controls span {
+    font-size: 0.9rem;
+    color: var(--sl-color-gray-3);
+    font-weight: 600;
+  }
+
+  .controls input,
+  .controls select,
+  .controls > button {
+    min-height: 2.4rem;
+    border-radius: 0.55rem;
+    border: 1px solid var(--sl-color-gray-5);
+    background: var(--sl-color-bg);
+    color: var(--sl-color-text);
+    padding: 0.5rem 0.7rem;
+  }
+
+  .controls > button {
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  #reset-filters {
+    border-color: var(--sl-color-red-low);
+    color: var(--sl-color-red);
+
+    &:hover {
+      background: var(--sl-color-red-low);
+      border-color: var(--sl-color-red);
+      color: var(--sl-color-red-high);
+    }
+  }
+
+  .results-summary {
+    margin: 0 0 1rem;
+    color: var(--sl-color-gray-2);
+    font-size: 0.95rem;
+  }
+
+  .cards-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid li {
+    margin: 0;
+    display: grid;
+    align-items: stretch;
+  }
+
+  .cards-grid li[hidden] {
+    display: none !important;
+  }
+
+  /* Progressive enhancement: each card row has shared title/chips tracks */
+  @supports (grid-template-rows: subgrid) {
+    .cards-grid {
+      grid-auto-rows: auto auto;
+    }
+
+    .cards-grid li {
+      grid-template-rows: subgrid;
+      grid-row: span 2;
+      align-items: normal;
+    }
+  }
+
+  .empty-state {
+    margin-top: 1rem;
+    color: var(--sl-color-gray-2);
+  }
+
+  .error-state {
+    margin-top: 1rem;
+    color: var(--sl-color-orange-high, #c17a00);
+    font-weight: 600;
+  }
+
+  @media (min-width: 40rem) {
+    .controls {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas:
+        "search tag"
+        "categories categories"
+        "week reset";
+      align-items: end;
+    }
+
+    .category-buttons {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .cards-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .cards-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>

@@ -1,0 +1,133 @@
+---
+import { formatPublishedDate, type WeekSummary } from "../lib/link-weeks";
+
+interface Props {
+  weekSummary: WeekSummary;
+}
+
+const { weekSummary } = Astro.props;
+const weekHref = `/blog/links/${weekSummary.week.data.week.toLowerCase()}`;
+
+function toLabel(value: unknown): string {
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (
+    value &&
+    typeof value === "object" &&
+    "name" in value &&
+    typeof (value as { name?: unknown }).name === "string"
+  ) {
+    return (value as { name: string }).name;
+  }
+
+  return String(value);
+}
+
+const topCategories = weekSummary.topCategories.map((item) => toLabel(item));
+const topTags = weekSummary.topTags.map((item) => toLabel(item));
+---
+
+<a href={weekHref} class="week-link">
+  <article class="week-card-content" aria-label={weekSummary.week.data.title}>
+    <h3 class="title">{weekSummary.week.data.title}</h3>
+
+    <p class="meta-row">
+      <span>{formatPublishedDate(weekSummary.week.data.publishedAt)}</span>
+      <span class="dot" aria-hidden="true">•</span>
+      <span>{weekSummary.totalLinks} links</span>
+    </p>
+
+    {
+      topCategories.length > 0 && (
+        <p class="meta-line">
+          <span class="label">Top categories:</span>{" "}
+          {topCategories.join(", ")}
+        </p>
+      )
+    }
+
+    {
+      topTags.length > 0 && (
+        <p class="meta-line">
+          <span class="label">Top tags:</span> {topTags.join(", ")}
+        </p>
+      )
+    }
+  </article>
+</a>
+
+<style>
+  .week-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .week-link:where(:visited, :hover, :active, :focus) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .week-link:focus-visible {
+    outline: none;
+  }
+
+  .week-card-content {
+    display: grid;
+    gap: 0.8rem;
+    margin: 0;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background: color-mix(
+      in oklab,
+      var(--sl-color-bg),
+      var(--sl-color-gray-6) 35%
+    );
+    transition: background-color 160ms ease;
+  }
+
+  .week-link:hover .week-card-content,
+  .week-link:focus-visible .week-card-content {
+    background: color-mix(
+      in oklab,
+      var(--sl-color-bg),
+      var(--sl-color-gray-6) 55%
+    );
+  }
+
+  .title {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: var(--sl-color-white);
+  }
+
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    color: var(--sl-color-gray-2);
+    font-size: 0.95rem;
+  }
+
+  .dot {
+    color: var(--sl-color-gray-3);
+  }
+
+  .label {
+    font-weight: 600;
+    color: var(--sl-color-gray-3);
+  }
+
+  .meta-line {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: var(--sl-color-gray-2);
+  }
+</style>

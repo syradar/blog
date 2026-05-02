@@ -1,0 +1,132 @@
+{
+  "title": "Links for 2026 W15",
+  "week": "2026-W15",
+  "publishedAt": "2026-04-10",
+  "links": [
+    {
+      "title": "Concepts",
+      "url": "https://concepts.app/en/",
+      "category": "UX",
+      "tags": [
+        "Sketching",
+        "Infinite Canvas",
+        "Tools"
+      ]
+    },
+    {
+      "title": "Charkoal",
+      "url": "https://charkoal.dev/",
+      "category": "UX",
+      "tags": [
+        "Diagramming",
+        "Documentation",
+        "C4 Model",
+        "Tools"
+      ]
+    },
+    {
+      "title": "Monosketch",
+      "url": "https://app.monosketch.io",
+      "category": "UX",
+      "tags": [
+        "Diagramming",
+        "ASCII",
+        "Tools"
+      ]
+    },
+    {
+      "title": "WireText",
+      "url": "https://wiretext.app",
+      "category": "UX",
+      "tags": [
+        "Diagramming",
+        "ASCII",
+        "Tools"
+      ]
+    },
+    {
+      "title": "Emdash",
+      "url": "https://blog.cloudflare.com/emdash-wordpress/",
+      "category": "Backend",
+      "tags": [
+        "CMS",
+        "TypeScript",
+        "Cloudflare"
+      ]
+    },
+    {
+      "title": "State of AI 2026 survey",
+      "url": "https://survey.devographics.com/en-US/survey/state-of-ai/2026",
+      "category": "Other",
+      "tags": [
+        "AI",
+        "Survey",
+        "Devographics"
+      ]
+    },
+    {
+      "title": "Alternatives to the !important keyword",
+      "url": "https://css-tricks.com/alternatives-to-the-important-keyword/",
+      "category": "Frontend",
+      "tags": [
+        "CSS"
+      ]
+    },
+    {
+      "title": "CSS subgrid is super good",
+      "url": "https://dbushell.com/2026/04/02/css-subgrid-is-super-good/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Subgrid",
+        "Layout"
+      ]
+    },
+    {
+      "title": "What to know in JavaScript: 2026 edition",
+      "url": "https://frontendmasters.com/blog/what-to-know-in-javascript-2026-edition/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript"
+      ]
+    },
+    {
+      "title": "Making emojis and icons screen reader accessible",
+      "url": "https://blog.pope.tech/2026/04/01/making-emojis-and-icons-screen-reader-accessible/",
+      "category": "UX",
+      "tags": [
+        "Accessibility",
+        "Icons"
+      ]
+    },
+    {
+      "title": "Git commands before reading code",
+      "url": "https://piechowski.io/post/git-commands-before-reading-code",
+      "category": "Frontend",
+      "tags": [
+        "Git",
+        "Tools"
+      ]
+    },
+    {
+      "title": "Škoda DuoBell",
+      "url": "https://www.skoda-storyboard.com/en/skoda-world/skoda-duobell-a-bicycle-bell-that-outsmarts-even-smart-headphones",
+      "category": "Other",
+      "tags": [
+        "Hardware",
+        "Cycling",
+        "Noise-Cancellation"
+      ]
+    },
+    {
+      "title": "Top ten Figma betrayals",
+      "url": "https://dbushell.com/2026/03/23/top-ten-figma-betrayls/",
+      "category": "UX",
+      "tags": [
+        "Figma",
+        "Design",
+        "Responsive Design"
+      ]
+    }
+  ]
+}

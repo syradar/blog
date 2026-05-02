@@ -1,0 +1,54 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const weeks = await getCollection("linkWeeks");
+
+  return weeks.map((week) => ({
+    params: { week: week.data.week.toLowerCase() },
+    props: { week },
+  }));
+}
+
+const { week } = Astro.props;
+const categoryOrder = ["Frontend", "Backend", "Email", "UX", "Other"] as const;
+
+const linksByCategory = week.data.links.reduce(
+  (acc, link) => {
+    acc[link.category].push(link);
+    return acc;
+  },
+  {
+    Frontend: [],
+    Backend: [],
+    Email: [],
+    UX: [],
+    Other: [],
+  } as Record<(typeof categoryOrder)[number], typeof week.data.links>,
+);
+
+const groupedCategories = categoryOrder
+  .map((category) => ({
+    category,
+    links: linksByCategory[category],
+  }))
+  .filter(({ links }) => links.length > 0);
+---
+
+<StarlightPage frontmatter={{ title: week.data.title }}>
+  {
+    groupedCategories.map(({ category, links }) => (
+      <section>
+        <h2>{category}</h2>
+        <ul>
+          {links.map((link) => (
+            <li>
+              {link.title}: <a href={link.url}>{link.url}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</StarlightPage>
