@@ -24,7 +24,9 @@ interface Props {
 const { group } = Astro.props;
 ---
 
-<StarlightPage frontmatter={{ title: `Weekly Links: ${group.year}` }}>
+<StarlightPage
+  frontmatter={{ title: `Weekly Links: ${group.year}`, tableOfContents: false }}
+>
   <p class="year-summary">
     {group.weeks.length} weeks • {group.totalLinks} links
   </p>
