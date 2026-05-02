@@ -12,9 +12,13 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: "Syradar Blog",
-			social: {
-				github: "https://github.com/syradar/blog",
-			},
+			social: [
+				{
+					icon: "github",
+					label: "GitHub",
+					href: "https://github.com/syradar/blog",
+				}
+			],
 			lastUpdated: true,
 			credits: true,
 			sidebar: [
@@ -47,7 +51,9 @@ export default defineConfig({
 				// 	link: "/authors",
 				// },
 			],
-			plugins: [starlightLinksValidator()],
+			plugins: [starlightLinksValidator({
+				exclude: ["/"],
+			})],
 			customCss: [
 				// Relative path to your custom CSS file
 				"./src/styles/custom.css",

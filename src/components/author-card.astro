@@ -11,16 +11,16 @@ interface Props {
 const { author } = Astro.props;
 // const authors = await getCollection("authors");
 const authorProfile = await getEntry("authors", author);
-const { data } = authorProfile;
 ---
 
+{!authorProfile ? null : 
 <div class="author">
   <div>
     {
-      data.profileImage ? (
+      authorProfile.data.profileImage ? (
         <Image
-          src={data.profileImage}
-          alt={`Profile picture of ${data.name}`}
+          src={authorProfile.data.profileImage}
+          alt={`Profile picture of ${authorProfile.data.name}`}
         />
       ) : null
     }
@@ -28,11 +28,12 @@ const { data } = authorProfile;
   </div>
   <div class="text">
     <h2>
-      {data.name}
+      {authorProfile.data.name}
     </h2>
-    <p>{data.bio}</p>
+    <p>{authorProfile.data.bio}</p>
   </div>
 </div>
+}
 
 <style>
   .author {

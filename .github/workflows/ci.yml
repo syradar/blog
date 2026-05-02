@@ -2,7 +2,7 @@ name: Continuous integration
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -17,8 +17,8 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: 'pnpm'
+          node-version: 24
+          cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
       - name: Astro build
