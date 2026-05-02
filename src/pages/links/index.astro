@@ -32,7 +32,7 @@ const initialFilters = {
     <a href="/blog/links/weeks">Weekly Links Archive</a>.
   </p>
 
-  <section class="controls" aria-label="Links Explorer filters">
+  <section class="controls not-content" aria-label="Links Explorer filters">
     <label class="control-search">
       <span>Search</span>
       <input
@@ -44,45 +44,61 @@ const initialFilters = {
       />
     </label>
 
-    <label class="control-tag">
-      <span>Tag</span>
-      <select id="tag" name="tag">
-        <option value="">All tags</option>
-        {facets.tags.map((tag) => <option value={tag}>{tag}</option>)}
-      </select>
-    </label>
+    <button
+      id="toggle-filters"
+      type="button"
+      aria-pressed="false"
+      aria-expanded="false"
+      aria-controls="filters-panel"
+    >
+      Filters
+    </button>
 
-    <fieldset class="category-filter-group control-categories">
-      <legend>Categories</legend>
-      <div class="category-buttons" id="category-buttons">
-        {
-          linkCategories.map((category) => (
-            <CategoryButton category={category} />
-          ))
-        }
+    <div id="filters-panel" class="filters-panel">
+      <div class="filters-panel__content">
+        <label class="control-tag">
+          <span>Tag</span>
+          <select id="tag" name="tag">
+            <option value="">All tags</option>
+            {facets.tags.map((tag) => <option value={tag}>{tag}</option>)}
+          </select>
+        </label>
+
+        <fieldset class="category-filter-group control-categories">
+          <legend>Categories</legend>
+          <div class="category-buttons" id="category-buttons">
+            {
+              linkCategories.map((category) => (
+                <CategoryButton category={category} />
+              ))
+            }
+          </div>
+        </fieldset>
+
+        <label class="control-week">
+          <span>Week</span>
+          <select id="week" name="week">
+            <option value="">All weeks</option>
+            {
+              facets.weeks.map(([weekKey, weekTitle]) => (
+                <option value={weekKey}>{weekTitle}</option>
+              ))
+            }
+          </select>
+        </label>
       </div>
-    </fieldset>
+    </div>
+  </section>
 
-    <label class="control-week">
-      <span>Week</span>
-      <select id="week" name="week">
-        <option value="">All weeks</option>
-        {
-          facets.weeks.map(([weekKey, weekTitle]) => (
-            <option value={weekKey}>{weekTitle}</option>
-          ))
-        }
-      </select>
-    </label>
+  <div class="results-summary-container">
+    <p class="results-summary" id="results-summary">
+      Showing {records.length} of {records.length} links.
+    </p>
 
     <button id="reset-filters" type="button" class="control-reset">
       Reset filters
     </button>
-  </section>
-
-  <p class="results-summary" id="results-summary">
-    Showing {records.length} of {records.length} links.
-  </p>
+  </div>
 
   <ul class="cards-grid" id="results-grid">
     {
@@ -157,6 +173,9 @@ const initialFilters = {
     const errorState = document.getElementById(
       "error-state",
     ) as HTMLParagraphElement | null;
+    const toggleFiltersButton = document.getElementById(
+      "toggle-filters",
+    ) as HTMLButtonElement | null;
 
     if (
       !dataNode ||
@@ -167,7 +186,8 @@ const initialFilters = {
       !resetButton ||
       !summary ||
       !emptyState ||
-      !errorState
+      !errorState ||
+      !toggleFiltersButton
     ) {
       throw new Error("Links Explorer controls are missing from the page.");
     }
@@ -184,6 +204,13 @@ const initialFilters = {
     const summaryNode = summary;
     const emptyStateNode = emptyState;
     const errorStateNode = errorState;
+    const toggleFilters = toggleFiltersButton;
+
+    // On startup: expand on desktop, collapse on mobile
+    const desktopMq = window.matchMedia("(min-width: 40rem)");
+    const expanded = String(desktopMq.matches);
+    toggleFilters.setAttribute("aria-pressed", expanded);
+    toggleFilters.setAttribute("aria-expanded", expanded);
 
     const payload = dataNode.getAttribute("data-payload") ?? "{}";
     const data = JSON.parse(payload) as Partial<ExplorerPayload>;
@@ -413,6 +440,14 @@ const initialFilters = {
         void applyFilters(readControls());
       });
 
+      toggleFilters.addEventListener("click", () => {
+        const isExpanded =
+          toggleFilters.getAttribute("aria-pressed") === "true";
+        const nextExpanded = !isExpanded;
+        toggleFilters.setAttribute("aria-pressed", String(nextExpanded));
+        toggleFilters.setAttribute("aria-expanded", String(nextExpanded));
+      });
+
       // Event delegation for category chips on cards
       document.addEventListener("click", (event) => {
         const target = event.target as HTMLElement;
@@ -484,15 +519,61 @@ const initialFilters = {
 
   .controls {
     display: grid;
-    gap: 0.75rem;
-    grid-template-columns: 1fr;
-    margin: 0 0 1rem;
+    column-gap: 0.75rem;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    /* margin: 0 0 1rem; */
+    align-items: end;
     grid-template-areas:
-      "search"
-      "categories"
-      "tag"
-      "week"
-      "reset";
+      "search toggle-filters"
+      "panel panel";
+  }
+
+  #toggle-filters {
+    max-height: 46px;
+  }
+  #toggle-filters[aria-pressed="true"] {
+    background: var(--sl-color-gray-5);
+  }
+
+  .filters-panel {
+    grid-area: panel;
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows 0.4s;
+    will-change: grid-template-rows;
+    transition-timing-function: linear(
+      0,
+      0.013 1%,
+      0.051 2.2%,
+      0.404 9.8%,
+      0.51 12.6%,
+      0.602 15.5%,
+      0.683 18.7%,
+      0.754 22.2%,
+      0.813 26%,
+      0.861 30.2%,
+      0.9 34.8%,
+      0.931 40%,
+      0.972 52.7%,
+      0.992 70.2%,
+      1
+    );
+  }
+
+  .filters-panel__content {
+    display: grid;
+    gap: 0.75rem;
+    padding-block: 0.5rem;
+    overflow: hidden;
+    grid-template-areas:
+      "tag week"
+      "categories categories";
+  }
+
+  .controls:has(#toggle-filters[aria-pressed="true"]) .filters-panel {
+    grid-template-rows: 1fr;
   }
 
   .controls label {
@@ -570,9 +651,33 @@ const initialFilters = {
     font-weight: 600;
   }
 
+  .filters-panel__content > button {
+    min-height: 2.4rem;
+    border-radius: 0.55rem;
+    border: 1px solid var(--sl-color-gray-5);
+    background: var(--sl-color-bg);
+    color: var(--sl-color-text);
+    padding: 0.5rem 0.7rem;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .results-summary-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+  }
+
   #reset-filters {
-    border-color: var(--sl-color-red-low);
+    border-radius: 0.55rem;
+    border: 1px solid var(--sl-color-red-low);
+    background: var(--sl-color-bg);
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
     color: var(--sl-color-red);
+    margin: 0;
 
     &:hover {
       background: var(--sl-color-red-low);
@@ -582,7 +687,6 @@ const initialFilters = {
   }
 
   .results-summary {
-    margin: 0 0 1rem;
     color: var(--sl-color-gray-2);
     font-size: 0.95rem;
   }
@@ -596,13 +700,25 @@ const initialFilters = {
     grid-template-columns: 1fr;
   }
 
+  @starting-style {
+    .cards-grid li {
+      opacity: 0.25;
+    }
+  }
+
   .cards-grid li {
     margin: 0;
     display: grid;
     align-items: stretch;
+    transition:
+      opacity 150ms,
+      display 150ms,
+      overlay 150ms;
+    transition-behavior: allow-discrete;
   }
 
   .cards-grid li[hidden] {
+    opacity: 0.25;
     display: none !important;
   }
 
@@ -632,11 +748,18 @@ const initialFilters = {
 
   @media (min-width: 40rem) {
     .controls {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "search toggle-filters"
+        "panel panel";
+      align-items: end;
+    }
+
+    .filters-panel__content {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-template-areas:
-        "search tag"
-        "categories categories"
-        "week reset";
+        "tag week"
+        "categories categories";
       align-items: end;
     }
 
