@@ -1,0 +1,78 @@
+{
+    "title": "Links for 2026 W18",
+    "week": "2026-W18",
+    "publishedAt": "2026-04-30",
+    "links": [
+        {
+            "title": "Scroll-driven animations",
+            "url": "https://www.joshwcomeau.com/animation/scroll-driven-animations/?from=newsletter",
+            "category": "Frontend",
+            "tags": [
+                "CSS",
+                "Animation",
+                "Scroll"
+            ]
+        },
+        {
+            "title": "Announcing TypeScript 7.0 Beta",
+            "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-beta/",
+            "category": "Frontend",
+            "tags": [
+                "TypeScript",
+                "Releases"
+            ]
+        },
+        {
+            "title": "The end of responsive images",
+            "url": "https://piccalil.li/blog/the-end-of-responsive-images/",
+            "category": "Frontend",
+            "tags": [
+                "CSS",
+                "Images",
+                "Responsive Design"
+            ]
+        },
+        {
+            "title": "Compositing and blending",
+            "url": "https://nik.digital/posts/compositing-blending",
+            "category": "Frontend",
+            "tags": [
+                "CSS",
+                "Rendering"
+            ]
+        },
+        {
+            "title": "CSS recently in all browsers",
+            "url": "https://nerdy.dev/CSS-recently-in-all-browsers",
+            "category": "Frontend",
+            "tags": [
+                "CSS",
+                "Browser Support"
+            ]
+        },
+        {
+            "title": "Cursor Camp",
+            "url": "https://neal.fun/cursor-camp/",
+            "category": "Other",
+            "tags": [
+                "Game"
+            ]
+        },
+        {
+            "title": "Laws of UX",
+            "url": "https://lawsofux.com/",
+            "category": "UX",
+            "tags": [
+                "Design"
+            ]
+        },
+        {
+            "title": "Thread on X (via xcancel)",
+            "url": "https://xcancel.com/GlennMeder/status/2049088498163216560",
+            "category": "Other",
+            "tags": [
+                "Social Media"
+            ]
+        }
+    ]
+}

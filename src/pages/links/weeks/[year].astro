@@ -1,0 +1,68 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { getCollection } from "astro:content";
+import LinkWeekCard from "../../../components/link-week-card.astro";
+import {
+  groupWeekSummariesByYear,
+  type YearSummary,
+} from "../../../lib/link-weeks";
+
+export async function getStaticPaths() {
+  const linkWeeks = await getCollection("linkWeeks");
+  const groupedByYear = groupWeekSummariesByYear(linkWeeks);
+
+  return groupedByYear.map((group) => ({
+    params: { year: group.year },
+    props: { group },
+  }));
+}
+
+interface Props {
+  group: YearSummary;
+}
+
+const { group } = Astro.props;
+---
+
+<StarlightPage frontmatter={{ title: `Weekly Links: ${group.year}` }}>
+  <p class="year-summary">
+    {group.weeks.length} weeks • {group.totalLinks} links
+  </p>
+
+  <p class="back-link">
+    <a href="/blog/links/weeks">View all years</a>
+  </p>
+
+  <ul class="weeks-list">
+    {
+      group.weeks.map((weekSummary) => (
+        <li>
+          <LinkWeekCard weekSummary={weekSummary} />
+        </li>
+      ))
+    }
+  </ul>
+</StarlightPage>
+
+<style>
+  .year-summary {
+    margin: 0 0 0.5rem;
+    color: var(--sl-color-gray-2);
+  }
+
+  .back-link {
+    margin: 0 0 1rem;
+  }
+
+  .weeks-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .weeks-list li {
+    margin: 0;
+  }
+</style>

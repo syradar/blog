@@ -1,0 +1,71 @@
+---
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { getCollection } from "astro:content";
+import LinkCard from "../../components/link-card.astro";
+import { formatPublishedDate } from "../../lib/link-weeks";
+
+const linkWeeks = await getCollection("linkWeeks");
+const sortedWeeks = linkWeeks.sort((a, b) => {
+  return (
+    new Date(b.data.publishedAt).getTime() -
+    new Date(a.data.publishedAt).getTime()
+  );
+});
+
+function getTopItems(items: string[], topN: number = 3): string[] {
+  const counts = new Map<string, number>();
+  for (const item of items) {
+    counts.set(item, (counts.get(item) ?? 0) + 1);
+  }
+
+  return Array.from(counts.entries())
+    .filter(([_, count]) => count >= topN)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, topN)
+    .map(([item]) => item);
+}
+---
+
+<StarlightPage frontmatter={{ title: "Weekly Archive" }}>
+  <ul class="weeks-grid">
+    {
+      sortedWeeks.map((week) => {
+        const description = `${formatPublishedDate(week.data.publishedAt)} • ${week.data.links.length} links`;
+        const allCategories = week.data.links.map((link) => link.category);
+        const allTags = week.data.links.flatMap((link) => link.tags);
+        const topCategories = getTopItems(allCategories, 3);
+        const topTags = getTopItems(allTags, 3);
+
+        return (
+          <li>
+            <LinkCard
+              title={week.data.title}
+              cardLink={`/blog/links/${week.data.week.toLowerCase()}`}
+              description={description}
+              categories={topCategories}
+              tags={topTags}
+              static={true}
+            />
+          </li>
+        );
+      })
+    }
+  </ul>
+</StarlightPage>
+
+<style>
+  .weeks-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: 1fr;
+  }
+
+  .weeks-grid li {
+    margin: 0;
+    display: grid;
+    align-items: stretch;
+  }
+</style>

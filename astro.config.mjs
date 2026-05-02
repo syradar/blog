@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import icon from "astro-icon";
 import starlightLinksValidator from "starlight-links-validator";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -10,6 +11,7 @@ export default defineConfig({
 	site: "https://syradar.github.io",
 	base: "/blog",
 	integrations: [
+		icon(),
 		starlight({
 			title: "Syradar Blog",
 			social: [
@@ -22,6 +24,13 @@ export default defineConfig({
 			lastUpdated: true,
 			credits: true,
 			sidebar: [
+				{
+					label: "Link Collection",
+					items: [
+						{ label: "Link Collection", link: "/links/" },
+						{ label: "Weekly Archive", link: "/links/weeks/" }
+					]
+				},
 				{
 					label: "General",
 					autogenerate: { directory: "general" },
@@ -52,7 +61,7 @@ export default defineConfig({
 				// },
 			],
 			plugins: [starlightLinksValidator({
-				exclude: ["/"],
+				exclude: ["/", "/blog/links/", "/blog/links/weeks/"],
 			})],
 			customCss: [
 				// Relative path to your custom CSS file

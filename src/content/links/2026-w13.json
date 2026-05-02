@@ -1,0 +1,52 @@
+{
+  "title": "Links for 2026 W13",
+  "week": "2026-W13",
+  "publishedAt": "2026-03-27",
+  "links": [
+    {
+      "title": "Announcing TypeScript 6.0",
+      "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-6-0/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Releases"
+      ]
+    },
+    {
+      "title": "The great CSS expansion",
+      "url": "https://blog.gitbutler.com/the-great-css-expansion",
+      "category": "Frontend",
+      "tags": [
+        "CSS"
+      ]
+    },
+    {
+      "title": "Scroll-driven corner shape animations",
+      "url": "https://css-tricks.com/experimenting-with-scroll-driven-corner-shape-animations/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Animation",
+        "border-radius"
+      ]
+    },
+    {
+      "title": "Awesome macOS",
+      "url": "https://github.com/jaywcjlove/awesome-mac",
+      "category": "Other",
+      "tags": [
+        "macOS",
+        "Tools"
+      ]
+    },
+    {
+      "title": "Why so many control rooms were seafoam green",
+      "url": "https://bethmathews.substack.com/p/why-so-many-control-rooms-were-seafoam",
+      "category": "Other",
+      "tags": [
+        "Design",
+        "History"
+      ]
+    }
+  ]
+}

@@ -31,7 +31,35 @@ const authors = defineCollection({
     }),
 });
 
+const linkWeeks = defineCollection({
+  loader: glob({
+    pattern: "**/*.json",
+    base: "./src/content/links",
+  }),
+  schema: z.object({
+    title: z.string(),
+    week: z.string().regex(/^\d{4}-W\d{2}$/, {
+      message: "Week must be in format YYYY-W## (e.g. 2026-W17)",
+    }),
+    publishedAt: z.coerce.date(),
+    links: z.array(
+      z.object({
+        title: z.string(),
+        url: z.url(),
+        description: z.string().optional(),
+        tags: z.array(z.string()).default([]),
+        category: z
+          .enum(["Frontend", "Backend", "Email", "UX", "Other"])
+          .default("Other"),
+        favorite: z.boolean().default(false),
+        ogImage: z.string().optional(),
+      }),
+    ),
+  }),
+});
+
 export const collections = {
   docs: defineCollection({ loader: docsLoader(), schema: docsSchema() }),
   authors: authors,
+  linkWeeks: linkWeeks,
 };

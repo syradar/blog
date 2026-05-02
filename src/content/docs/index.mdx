@@ -3,31 +3,55 @@ title: Curated Web Development Resources
 description: Syradar's collection of web resources.
 template: splash
 hero:
-  tagline:  A curated list of guides, links, and experts that have significantly shaped my web development journey.
+  tagline: A curated list of guides, links, and experts that have significantly shaped my web development journey.
   image:
     file: "../../assets/la-surprise.webp"
     alt: "Joseph Ducreux: La Surprise"
   actions:
-    - text: Start with General Resources
-      link: /blog/general/
+    - text: Link Collection
+      link: /blog/links/
       icon: right-arrow
-    - text: View Categories
-      link: "#categories"
+    - text: General Resources
+      link: /blog/general/
       variant: secondary
 ---
 
-import { Card, CardGrid, Icon, LinkCard } from '@astrojs/starlight/components';
+import { Card, CardGrid, Icon, LinkCard } from "@astrojs/starlight/components";
 
 <h2 id="categories">Categories</h2>
 
 <CardGrid>
-	<LinkCard title="General" href="/blog/general/" description="Helpful tips, resources, and links on various topics that don’t fit into specific categories yet."/>
-	<LinkCard title="JavaScript" href="/blog/js/" description="Guides, tutorials, and insights into modern JavaScript techniques and best practices."/>
-	<LinkCard title="CSS" href="/blog/css/" description="Explore CSS resources, from layout techniques to modern features and performance tips." />
-	<LinkCard title="Accessibility" href="/blog/accessibility/" description="Resources and tools for building, testing, and improving accessible websites for all users." />
-	<LinkCard title="Design" href="/blog/design/" description="Articles, resources, and insights into web design, design systems, and UI components."/>
-	<LinkCard title="Software" href="/blog/software/" description="Useful software and websites to make development more efficient and enjoyable."/>
-</CardGrid> 
+  <LinkCard
+    title="General"
+    href="/blog/general/"
+    description="Helpful tips, resources, and links on various topics that don’t fit into specific categories yet."
+  />
+  <LinkCard
+    title="JavaScript"
+    href="/blog/js/"
+    description="Guides, tutorials, and insights into modern JavaScript techniques and best practices."
+  />
+  <LinkCard
+    title="CSS"
+    href="/blog/css/"
+    description="Explore CSS resources, from layout techniques to modern features and performance tips."
+  />
+  <LinkCard
+    title="Accessibility"
+    href="/blog/accessibility/"
+    description="Resources and tools for building, testing, and improving accessible websites for all users."
+  />
+  <LinkCard
+    title="Design"
+    href="/blog/design/"
+    description="Articles, resources, and insights into web design, design systems, and UI components."
+  />
+  <LinkCard
+    title="Software"
+    href="/blog/software/"
+    description="Useful software and websites to make development more efficient and enjoyable."
+  />
+</CardGrid>
 
 <h2>Help or need help</h2>
 
@@ -39,20 +63,22 @@ import { Card, CardGrid, Icon, LinkCard } from '@astrojs/starlight/components';
 		Looking for expert web development services or career opportunities? Reach out to us at [DevCore](https://www.devcore.se/).
 	</Card>
 
-	
-	{/* <Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card> */}
-</CardGrid> 
+    {/* <Card title="Add new content" icon="add-document">
+    	Add Markdown or MDX files to `src/content/docs` to create new pages.
+    </Card>
+    <Card title="Configure your site" icon="setting">
+    	Edit your `sidebar` and other config in `astro.config.mjs`.
+    </Card>
+    <Card title="Read the docs" icon="open-book">
+    	Learn more in [the Starlight Docs](https://starlight.astro.build/).
+    </Card> */}
 
-<br/>
-<br/>
-<br/>
-<br/>
-Splash image: [Joseph Ducreux: La Surprise](https://collection.nationalmuseum.se/sv/collection/item/230178/), between 1791 and 1799, Nationalmuseum (Photography: Anna Danielsson).
+</CardGrid>
+
+<br />
+<br />
+<br />
+<br />
+Splash image: [Joseph Ducreux: La
+Surprise](https://collection.nationalmuseum.se/sv/collection/item/230178/),
+between 1791 and 1799, Nationalmuseum (Photography: Anna Danielsson).
