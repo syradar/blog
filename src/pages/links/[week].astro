@@ -36,7 +36,7 @@ const groupedCategories = categoryOrder
   .filter(({ links }) => links.length > 0);
 ---
 
-<StarlightPage frontmatter={{ title: week.data.title }}>
+<StarlightPage frontmatter={{ title: week.data.title, tableOfContents: false }}>
   {
     groupedCategories.map(({ category, links }) => (
       <section>
