@@ -33,27 +33,39 @@ export default defineConfig({
 				},
 				{
 					label: "General",
-					autogenerate: { directory: "general" },
+					items: [
+						{ autogenerate: { directory: "general" } }
+					],
 				},
 				{
 					label: "JavaScript",
-					autogenerate: { directory: "js" },
+					items: [
+						{ autogenerate: { directory: "js" } }
+					],
 				},
 				{
 					label: "CSS",
-					autogenerate: { directory: "css" },
+					items: [
+						{ autogenerate: { directory: "css" } }
+					],
 				},
 				{
 					label: "Accessibility",
-					autogenerate: { directory: "accessibility" },
+					items: [
+						{ autogenerate: { directory: "accessibility" } }
+					],
 				},
 				{
 					label: "Design",
-					autogenerate: { directory: "design" },
+					items: [
+						{ autogenerate: { directory: "design" } }
+					],
 				},
 				{
 					label: "Software",
-					autogenerate: { directory: "software" },
+					items: [
+						{ autogenerate: { directory: "software" } }
+					],
 				},
 				// {
 				// 	label: "Authors",
