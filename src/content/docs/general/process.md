@@ -3,7 +3,6 @@ title: Software development process
 description: Articles, guides and thoughts on how to build software.
 ---
 
-
 - ["20% for tech debt" doesn't work](https://zaidesanton.substack.com/p/how-to-implement-20-for-tech-debt-)
 - Dan North - Kicking the Complexity Habit
   - At GOTO: <https://www.youtube.com/watch?v=XqgwHXsQA1g>
