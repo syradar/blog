@@ -34,5 +34,5 @@ Typography is a crucial part of web development, impacting readability and the o
 ### Technical fonts
 
 - [National Park](https://nationalparktypeface.com/): Capturing the charm of the router-carved type ubiquitous in America’s national parks, without sacrificing legibility or versatility.
-- [Routed Gothic](https://webonastick.com/fonts/routed-gothic/):  A clean implementation of a common lettering style found on technical drawings, engraved office signs, computer and typewriter keyboards, and some comic books and avionics from the mid-20th century.
+- [Routed Gothic](https://webonastick.com/fonts/routed-gothic/): A clean implementation of a common lettering style found on technical drawings, engraved office signs, computer and typewriter keyboards, and some comic books and avionics from the mid-20th century.
 - [osifont](https://github.com/hikikomori82/osifont): Free font for technical drawings to comply with ISO 3098.

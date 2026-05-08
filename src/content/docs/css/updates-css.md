@@ -79,7 +79,7 @@ Both are used to hide parts of elements and show other parts.
 - [Clipping and Masking in CSS](https://css-tricks.com/clipping-masking-css/): By CSS Tricks.
 - [CSS Masking Module Level 1](https://www.w3.org/TR/css-masking-1/?spm=a2c65.11461447.0.0.31375290nsms75)
 
-<!-- 
+<!--
 ## Logical properties
 
 Block-start, block-end, inline-start, inline-end

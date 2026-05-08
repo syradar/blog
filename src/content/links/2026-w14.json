@@ -7,119 +7,79 @@
       "title": "Axios compromised on npm – malicious versions drop remote access trojan",
       "url": "https://www.stepsecurity.io/blog/axios-compromised-on-npm-malicious-versions-drop-remote-access-trojan",
       "category": "Backend",
-      "tags": [
-        "Security",
-        "NPM",
-        "Axios"
-      ]
+      "tags": ["Security", "NPM", "Axios"]
     },
     {
       "title": "Custom property editors in Optimizely CMS 13",
       "url": "https://world.optimizely.com/blogs/grzegorz-wiechec/dates/2026/3/custom-property-editors-in-optimizely-cms-13/",
       "category": "Backend",
-      "tags": [
-        "CMS",
-        "Optimizely"
-      ]
+      "tags": ["CMS", "Optimizely"]
     },
     {
       "title": "Three pillars of JavaScript bloat",
       "url": "https://43081j.com/2026/03/three-pillars-of-javascript-bloat",
       "category": "Frontend",
-      "tags": [
-        "TypeScript",
-        "Performance"
-      ]
+      "tags": ["TypeScript", "Performance"]
     },
     {
       "title": "Preloading images",
       "url": "https://macarthur.me/posts/preloading-images/",
       "category": "Frontend",
-      "tags": [
-        "Performance",
-        "Images"
-      ]
+      "tags": ["Performance", "Images"]
     },
     {
       "title": "Signal: the push-pull based algorithm",
       "url": "https://willybrauner.com/journal/signal-the-push-pull-based-algorithm",
       "category": "Frontend",
-      "tags": [
-        "Reactivity",
-        "Signals",
-        "Architecture"
-      ]
+      "tags": ["Reactivity", "Signals", "Architecture"]
     },
     {
       "title": "FireBun: Node to Bun for 5x throughput",
       "url": "https://trigger.dev/blog/firebun",
       "category": "Backend",
-      "tags": [
-        "Node",
-        "Bun",
-        "Performance"
-      ]
+      "tags": ["Node", "Bun", "Performance"]
     },
     {
       "title": "Knip",
       "url": "https://knip.dev/",
       "category": "Frontend",
-      "tags": [
-        "Tools"
-      ]
+      "tags": ["Tools"]
     },
     {
       "title": "Test IDs are an a11y smell",
       "url": "https://tkdodo.eu/blog/test-ids-are-an-a11y-smell",
       "category": "UX",
-      "tags": [
-        "Testing",
-        "Accessibility"
-      ]
+      "tags": ["Testing", "Accessibility"]
     },
     {
       "title": "k6 open source",
       "url": "https://k6.io/open-source/",
       "category": "Backend",
-      "tags": [
-        "Testing",
-        "Load Testing"
-      ]
+      "tags": ["Testing", "Load Testing"]
     },
     {
       "title": "CodingFont",
       "url": "https://www.codingfont.com/",
       "category": "UX",
-      "tags": [
-        "Fonts",
-        "Typography"
-      ]
+      "tags": ["Fonts", "Typography"]
     },
     {
       "title": "Input font",
       "url": "https://input.djr.com/",
       "category": "UX",
-      "tags": [
-        "Fonts",
-        "Typography"
-      ]
+      "tags": ["Fonts", "Typography"]
     },
     {
       "title": "Monaspace case study",
       "url": "https://lettermatic.com/custom/monaspace-case-study",
       "category": "UX",
-      "tags": [
-        "Fonts",
-        "Design"
-      ]
+      "tags": ["Fonts", "Design"]
     },
     {
       "title": "Less but better – Dieter Rams poster",
       "url": "https://phillipmillion.com/en-sek/products/less-but-better-dieter-rams-iconic-designs-poster",
       "category": "Other",
-      "tags": [
-        "Design"
-      ]
+      "tags": ["Design"]
     }
   ]
 }

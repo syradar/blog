@@ -1,8 +1,8 @@
-import { docsLoader } from "@astrojs/starlight/loaders";
-import { docsSchema } from "@astrojs/starlight/schema";
-import { glob } from "astro/loaders";
-import { z } from "astro/zod";
-import { defineCollection } from "astro:content";
+import { docsLoader } from "@astrojs/starlight/loaders"
+import { docsSchema } from "@astrojs/starlight/schema"
+import { glob } from "astro/loaders"
+import { z } from "astro/zod"
+import { defineCollection } from "astro:content"
 
 const authors = defineCollection({
   loader: glob({ pattern: "**/*.yaml", base: "./src/content/authors" }),
@@ -21,15 +21,13 @@ const authors = defineCollection({
           github: z.url().optional(),
         })
         .optional(),
-      platforms: z
-        .array(z.enum(["YouTube", "Blog", "Article Writer"]))
-        .nonempty(), // Specify the platforms the author contributes to
+      platforms: z.array(z.enum(["YouTube", "Blog", "Article Writer"])).nonempty(), // Specify the platforms the author contributes to
       featuredVideos: z.array(z.url()).optional(), // YouTube specific: list of featured videos
       featuredArticles: z.array(z.url()).optional(), // List of featured articles or blog posts
       email: z.email().optional(), // Contact email (optional)
       tags: z.array(z.string()).optional(), // Tags/Keywords associated with the author or their work
     }),
-});
+})
 
 const linkWeeks = defineCollection({
   loader: glob({
@@ -48,18 +46,16 @@ const linkWeeks = defineCollection({
         url: z.url(),
         description: z.string().optional(),
         tags: z.array(z.string()).default([]),
-        category: z
-          .enum(["Frontend", "Backend", "Email", "UX", "Other"])
-          .default("Other"),
+        category: z.enum(["Frontend", "Backend", "Email", "UX", "Other"]).default("Other"),
         favorite: z.boolean().default(false),
         ogImage: z.string().optional(),
       }),
     ),
   }),
-});
+})
 
 export const collections = {
   docs: defineCollection({ loader: docsLoader(), schema: docsSchema() }),
   authors: authors,
   linkWeeks: linkWeeks,
-};
+}
