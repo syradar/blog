@@ -12,16 +12,11 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v5
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
         with:
-          version: 10
-      - name: Use Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          cache: "pnpm"
+          bun-version: latest
       - name: Install dependencies
-        run: pnpm install
+        run: bun install
       - name: Astro build
-        run: pnpm build
+        run: bun run build
