@@ -24,7 +24,7 @@
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "oxfmt": "^0.48.0",
-    "oxlint": "^1.64.0"
+    "oxfmt": "^0.50.0",
+    "oxlint": "^1.65.0"
   }
 }
