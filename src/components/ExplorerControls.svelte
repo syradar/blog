@@ -9,6 +9,7 @@
   interface Props {
     facets: { tags: string[]; weeks: [string, string][] };
     onchange: () => void;
+    disabled?: boolean;
     q?: string;
     selectedCategories?: LinkCategory[];
     tag?: string;
@@ -18,6 +19,7 @@
   let {
     facets,
     onchange,
+    disabled = false,
     q = $bindable(""),
     selectedCategories = $bindable<LinkCategory[]>([]),
     tag = $bindable(""),
@@ -27,6 +29,7 @@
   let filtersOpen = $state(false);
 
   function toggleCategory(category: LinkCategory): void {
+    if (disabled) return;
     selectedCategories = selectedCategories.includes(category)
       ? selectedCategories.filter((value) => value !== category)
       : [...selectedCategories, category];
@@ -42,6 +45,7 @@
       name="q"
       type="search"
       placeholder="Search links"
+      disabled={disabled}
       value={q}
       oninput={(event) => {
         q = (event.currentTarget as HTMLInputElement).value;
@@ -56,6 +60,7 @@
     aria-pressed={filtersOpen ? "true" : "false"}
     aria-expanded={filtersOpen ? "true" : "false"}
     aria-controls="filters-panel"
+    disabled={disabled}
     onclick={() => (filtersOpen = !filtersOpen)}
   >
     Filters
@@ -74,6 +79,7 @@
         <select
           id="tag"
           name="tag"
+          disabled={disabled}
           value={tag}
           onchange={(event) => {
             tag = (event.currentTarget as HTMLSelectElement).value;
@@ -98,6 +104,7 @@
               type="button"
               class="category-button"
               class:is-other={isOther}
+              disabled={disabled}
               aria-pressed={isPressed ? "true" : "false"}
               style="--category-color: {color}"
               onclick={() => toggleCategory(category)}
@@ -114,6 +121,7 @@
         <select
           id="week"
           name="week"
+          disabled={disabled}
           value={week}
           onchange={(event) => {
             week = (event.currentTarget as HTMLSelectElement).value;
