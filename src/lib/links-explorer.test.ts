@@ -14,6 +14,8 @@ function createWeek(
     favorite: boolean
   }>,
 ) {
+  type LinkWeekInput = Parameters<typeof toLinksExplorerRecords>[0][number]
+
   return {
     id,
     data: {
@@ -22,7 +24,7 @@ function createWeek(
       publishedAt: new Date(publishedAt),
       links,
     },
-  } as any
+  } as LinkWeekInput
 }
 
 describe("links-explorer", () => {

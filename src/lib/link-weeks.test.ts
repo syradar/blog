@@ -11,6 +11,8 @@ type MockLink = {
 }
 
 function createWeek(week: string, publishedAt: string, links: MockLink[], id = week) {
+  type LinkWeekInput = Parameters<typeof summarizeWeek>[0]
+
   return {
     id,
     data: {
@@ -19,7 +21,7 @@ function createWeek(week: string, publishedAt: string, links: MockLink[], id = w
       publishedAt: new Date(publishedAt),
       links,
     },
-  } as any
+  } as LinkWeekInput
 }
 
 describe("link-weeks", () => {
