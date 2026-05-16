@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest"
-import { createLinksIndex, normalizeFilters, searchLinks } from "./links-search"
+import {
+  buildLinksIndexSnapshot,
+  loadLinksIndex,
+  normalizeFilters,
+  searchLinks,
+} from "./links-search"
 import type { LinksExplorerRecord } from "./links-explorer"
 
 const records: LinksExplorerRecord[] = [
@@ -41,6 +46,10 @@ const records: LinksExplorerRecord[] = [
   },
 ]
 
+async function createLinksIndex() {
+  return loadLinksIndex(await buildLinksIndexSnapshot(records))
+}
+
 describe("links-search", () => {
   it("normalizes missing and whitespace values", () => {
     expect(normalizeFilters({ q: "  css  " })).toEqual({
@@ -52,30 +61,34 @@ describe("links-search", () => {
   })
 
   it("searches with text query and applies category facets", async () => {
-    const index = await createLinksIndex(records)
+    const index = await createLinksIndex()
     const result = await searchLinks(index, records, { q: "css", categories: ["Frontend"] })
+
     expect(result.total).toBe(2)
     expect(result.records.map((record) => record.id).sort()).toEqual(["2026-w20-0", "2026-w20-1"])
     expect(result.records.every((record) => record.category === "Frontend")).toBe(true)
   })
 
   it("searches with text query and applies tag and week facets", async () => {
-    const index = await createLinksIndex(records)
+    const index = await createLinksIndex()
     const result = await searchLinks(index, records, { q: "css", tag: "animation", week: "2026-W20" })
+
     expect(result.total).toBe(1)
     expect(result.records[0]?.id).toBe("2026-w20-0")
   })
 
   it("filters and sorts by recency when no text query is provided", async () => {
-    const index = await createLinksIndex(records)
+    const index = await createLinksIndex()
     const result = await searchLinks(index, records, { categories: ["Frontend"] })
+
     expect(result.records.map((record) => record.id)).toEqual(["2026-w20-0", "2026-w20-1"])
     expect(result.total).toBe(2)
   })
 
   it("returns no records when no hit matches filters", async () => {
-    const index = await createLinksIndex(records)
+    const index = await createLinksIndex()
     const result = await searchLinks(index, records, { q: "backend", week: "2026-W20" })
+
     expect(result).toEqual({ records: [], total: 0 })
   })
 })
