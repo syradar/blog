@@ -21,12 +21,12 @@ sidebar:
 #### Documentation on OKLCH
 
 - [OKLCH Color Picker & Converter](https://oklch.com/#70,0.1,296,100)
-- [OKLCH in CSS: why we moved from RGB and HSL](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl): By Evil Martians.
-- [LCH is the best color space!](https://atmos.style/blog/lch-color-space): By Atmos.
-- [Falling For Oklch: A Love Story Of Color Spaces](https://www.smashingmagazine.com/2023/08/oklch-color-spaces-gamuts-css/), Gamuts, And CSS: By Smashing Magazine.
+- [OKLCH in CSS: why we moved from RGB and HSL](https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl) by Evil Martians
+- [LCH is the best color space!](https://atmos.style/blog/lch-color-space) by Atmos
+- [Falling For Oklch: A Love Story Of Color Spaces, Gamuts, And CSS](https://www.smashingmagazine.com/2023/08/oklch-color-spaces-gamuts-css/) by Smashing Magazine
 - [oklch() on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch)
 - [oklab() on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklab)
-- [A perceptual color space for image processing](https://bottosson.github.io/posts/oklab/): By the creator of OKLAB, Björn Ottosson.
+- [A perceptual color space for image processing](https://bottosson.github.io/posts/oklab/) by Björn Ottosson, creator of OKLAB
 - [caniuse: oklch()](https://caniuse.com/mdn-css_types_color_oklch)
 
 ### New color functions
@@ -55,7 +55,7 @@ Cascade layers allow controlling the specificity and order of rule sets across s
 CSS subgrid allows a child grid to inherit the column and row definitions of its parent grid, making it easier to align nested grid items consistently with the parent layout. It helps maintain a cohesive design structure without redefining grid tracks in the child elements.
 
 - [Subgrid on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid)
-- [CSS subgrid](https://web.dev/articles/css-subgrid): By web.dev.
+- [CSS subgrid](https://web.dev/articles/css-subgrid) by web.dev
 - [caniuse: CSS Subgrid](https://caniuse.com/css-subgrid)
 
 Related 📚 [CSS Grid on this blog](/blog/css/layout/#css-grid)

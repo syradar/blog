@@ -14,7 +14,7 @@ I got interested in accessibility by watching Microsoft design game controllers 
 - [Digin.nu](https://digin.nu/): A Swedish website about digital inclusion and accessibility by Swedish Post and Telecom Authority (PTS), the Agency for Digital Government (DIGG), the Swedish Agency for Participation (MFD), and the Swedish Agency for Accessible Media (MTM).
 - [Create an accessibility statement](https://www.digg.se/kunskap-och-stod/digital-tillganglighet/skapa-en-tillganglighetsredogorelse)
 
-### Browsers extensions
+### Browser extensions
 
 - [WAVE](https://wave.webaim.org/)
 - [SiteImprove](https://www.siteimprove.com/integrations/browser-extensions/)
@@ -79,7 +79,7 @@ WCAG 2.2 is the current standard in use.
 
 ## Laws and regulations
 
-- [EAA](https://ec.europa.eu/social/main.jsp?catId=1202): Europoean Accssibility Act.
+- [EAA](https://ec.europa.eu/social/main.jsp?catId=1202): European Accessibility Act.
   - [EU Directive 2019/882](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32019L0882)
     - [EU Directive 2019/882 English PDF](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32019L0882)
     - [EU Directive 2019/882 Swedish PDF](https://eur-lex.europa.eu/legal-content/SV/TXT/PDF/?uri=CELEX:32019L0882)

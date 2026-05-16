@@ -1,6 +1,6 @@
 ---
 title: Get amazing at VS Code 🚀
-description: This guide is aimed at helping you becoma a VS Code Wizard 🧙‍♂️.
+description: This guide is aimed at helping you become a VS Code Wizard 🧙‍♂️
 sidebar:
   label: VS Code guide
 ---

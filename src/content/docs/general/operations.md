@@ -9,12 +9,12 @@ Maintaining and building post-launch is crucial to ensure your product remains r
 
 Feature flags allow you to control which features are active without deploying new code, enabling gradual rollouts and easier testing.
 
-- [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html): By Pete Hodgson.
-- [9 essential feature flag best practices](https://posthog.com/product-engineers/feature-flag-best-practices): By PostHog.
-- [Feature Flag best practices](https://www.flagsmith.com/blog/feature-flags-best-practices): By FlagSmith.
-- [7 best practices for short-term and permanent flags](https://launchdarkly.com/guides/30-feature-flagging-best-practices-mega-guide/7-best-practices-for-short-term-and-permanent-flags/): By LaunchDarkly.
+- [Feature Toggles (aka Feature Flags)](https://martinfowler.com/articles/feature-toggles.html) by Pete Hodgson
+- [9 essential feature flag best practices](https://posthog.com/product-engineers/feature-flag-best-practices) by PostHog
+- [Feature Flag best practices](https://www.flagsmith.com/blog/feature-flags-best-practices) by FlagSmith
+- [7 best practices for short-term and permanent flags](https://launchdarkly.com/guides/30-feature-flagging-best-practices-mega-guide/7-best-practices-for-short-term-and-permanent-flags/) by LaunchDarkly
 - [Tutorial: Use feature flags in an ASP.NET Core app](https://learn.microsoft.com/en-us/azure/azure-app-configuration/use-feature-flags-dotnet-core)
-- [Feature flags](https://www.optimizely.com/optimization-glossary/feature-flags/): By Optimizely (formerly Episerver).
+- [Feature flags](https://www.optimizely.com/optimization-glossary/feature-flags/) by Optimizely (formerly Episerver)
 
 ### Tools
 

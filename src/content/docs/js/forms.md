@@ -1,11 +1,11 @@
 ---
 title: Forms
-description: Forms and related stuff
+description: Resources for building, validating, and enhancing HTML forms
 ---
 
 ## Documentation
 
-- [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData):
+- [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData/FormData): MDN reference for the FormData API used to construct key/value pairs from form fields.
 
 ## Validation
 

@@ -7,6 +7,6 @@ description: Resources, talks and people building using C#.
 
 ### Nick Chapsas
 
-- YouTube: <https://www.youtube.com/@nickchapsas>
-- Blog: <https://nickchapsas.com/>
-- Courses: <https://dometrain.com/>
+- YouTube: [Nick Chapsas](https://www.youtube.com/@nickchapsas)
+- Blog: [nickchapsas.com](https://nickchapsas.com/)
+- Courses: [Dometrain](https://dometrain.com/)

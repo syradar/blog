@@ -3,6 +3,8 @@ title: Documentation
 description: Resources, articles and talks on creating, maintaining and improving documentation.
 ---
 
+## Articles
+
 - [Diátaxis](https://diataxis.fr/): A systematic approach to technical documentation authoring.
 - [The Ultimate Guide To Software Architecture Documentation](https://www.workingsoftware.dev/software-architecture-documentation-the-ultimate-guide)
 
