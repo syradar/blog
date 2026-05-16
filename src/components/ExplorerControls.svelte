@@ -61,7 +61,13 @@
     Filters
   </button>
 
-  <div id="filters-panel" class="filters-panel" class:is-open={filtersOpen}>
+  <div
+    id="filters-panel"
+    class="filters-panel"
+    class:is-open={filtersOpen}
+    aria-hidden={filtersOpen ? "false" : "true"}
+    inert={!filtersOpen}
+  >
     <div class="filters-panel__content">
       <label class="control-tag">
         <span>Tag</span>
