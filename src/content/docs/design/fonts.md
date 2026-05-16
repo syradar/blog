@@ -6,7 +6,7 @@ description: Where to get fonts, how to pair them, and in the darkness style the
 Typography is a crucial part of web development, impacting readability and the overall user experience. As someone who's always been fascinated by fonts, I've curated a collection of resources that help developers make informed typography choices for the web.
 
 - [Modern Font Stacks](https://modernfontstacks.com/): Fonts grouped by family type using only fonts found on modern OSes. Great defaults to add as fallbacks.
-- [Toools - font section](https://www.toools.design/font-library-and-inspiration) - Typography inspiration, free font libraries & more
+- [Toools — font section](https://www.toools.design/font-library-and-inspiration): Typography inspiration, free font libraries, and more
 - [Typewolf](https://www.typewolf.com/): What's trending in type
 - [typespiration](https://typespiration.com/): Font combinations and color palettes
 - [fontpair](https://www.fontpair.co/): Font pairings
@@ -16,8 +16,8 @@ Typography is a crucial part of web development, impacting readability and the o
 
 ## Monospace Web
 
-- [The Monospace Web](https://owickstrom.github.io/the-monospace-web/): A minimalist design exploratio.
-  - [How Oskar Wickström built The Monospace Web](https://wickstrom.tech/2024-09-26-how-i-built-the-monospace-web.html).
+- [The Monospace Web](https://owickstrom.github.io/the-monospace-web/): A minimalist design exploration.
+  - [How Oskar Wickström built The Monospace Web](https://wickstrom.tech/2024-09-26-how-i-built-the-monospace-web.html)
 - [Notes on monospace, fonts, ascii, unicode](https://wonger.dev/posts/monospace-dump): A collection of TILs and resources by wonger.dev.
 
 ## Typography

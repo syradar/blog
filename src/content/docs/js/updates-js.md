@@ -46,7 +46,9 @@ Promise.allSettled() allows you to handle multiple promises, even if some fail. 
 ```js
 const promises = [fetch("/users"), fetch("/roles")]
 const allResults = await Promise.allSettled(promises)
-const errors = allResults.filter((p) => p.status === "rejected").map((p) => p.reason)
+const errors = allResults
+  .filter((p) => p.status === "rejected")
+  .map((p) => p.reason)
 ```
 
 [`Promise.allSettled()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled)
@@ -233,7 +235,9 @@ const getUsers = async (array) => {
     return users
   } catch (error) {
     console.log("enter")
-    throw new Error("Something when wrong, please try again later", { cause: error })
+    throw new Error("Something when wrong, please try again later", {
+      cause: error,
+    })
   }
 }
 
@@ -306,7 +310,7 @@ console.log(lastIndex) // Output: 2
 - [`findLast()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLast)
 - [`findLastIndex()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findLastIndex)
 
-### `Array.toReversed()`, `Array.toSorted()`, `Array.toSpliced(`)
+### `Array.toReversed()`, `Array.toSorted()`, `Array.toSpliced()`
 
 These new methods allow you to reverse, sort, or splice arrays without modifying the original array, providing a functional approach to array manipulation.
 

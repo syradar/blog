@@ -3,9 +3,11 @@ title: Design
 description: Articles, resources, and insights into web design, design systems, and UI components.
 ---
 
+## Articles
+
 - [Designing depth](https://rauno.me/craft/depth)
 - [Decision trees for choosing UI components](https://www.smashingmagazine.com/2024/05/decision-trees-ui-components/)
-- [Refactoring UI](https://www.refactoringui.com/): Book on how to learn how to design beautiful user interfaces by yourself using specific tactics explained from a developer's point-of-view. From the creators of Tailwind CSS
+- [Refactoring UI](https://www.refactoringui.com/): A book on designing beautiful user interfaces using specific tactics from a developer's perspective, by the creators of Tailwind CSS
 
 ## Design Systems
 
@@ -18,7 +20,7 @@ description: Articles, resources, and insights into web design, design systems, 
 
 > The HIG contains guidance and best practices that can help you design a great experience for any Apple platform.
 
-It also contain great advice that can be used generally for developing any application.
+It also contains great advice that can be used generally for developing any application.
 
 - [Apple HIG](https://developer.apple.com/design/human-interface-guidelines)
 - [Apple HIG - Writing](https://developer.apple.com/design/human-interface-guidelines/writing)
