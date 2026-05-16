@@ -83,6 +83,10 @@
 
   function showRuntimeError(): void {
     indexError = true;
+    q = "";
+    selectedCategories = [];
+    tag = "";
+    week = "";
     visibleIds = new Set(allVisibleIds);
     total = recordsTotal;
     hasAppliedFilters = true;
@@ -123,16 +127,8 @@
     week = params.get("week") ?? "";
   }
 
-  onMount(async () => {
+  onMount(() => {
     syncFromUrl();
-
-    try {
-      index = loadLinksIndex(indexSnapshot);
-      await applyFilters(false);
-    } catch (error) {
-      console.error("Links Explorer: failed to initialize search index", error);
-      showRuntimeError();
-    }
 
     const handlePopstate = () => {
       syncFromUrl();
@@ -140,6 +136,16 @@
     };
 
     window.addEventListener("popstate", handlePopstate);
+
+    void (async () => {
+      try {
+        index = loadLinksIndex(indexSnapshot);
+        await applyFilters(false);
+      } catch (error) {
+        console.error("Links Explorer: failed to initialize search index", error);
+        showRuntimeError();
+      }
+    })();
 
     return () => {
       window.removeEventListener("popstate", handlePopstate);
@@ -149,6 +155,7 @@
 
 <ExplorerControls
   {facets}
+  disabled={indexError}
   bind:q
   bind:selectedCategories
   bind:tag
@@ -165,6 +172,7 @@
     id="reset-filters"
     type="button"
     class="control-reset"
+    disabled={indexError}
     onclick={resetFilters}
   >
     Reset filters
