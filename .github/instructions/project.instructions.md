@@ -8,6 +8,7 @@ applyTo: "src/**"
 ## Tech Stack
 
 - **Framework**: Astro with the Starlight integration
+- **Style**: No semicolons in JS/TS files
 - **Package manager**: pnpm
 - **Build check**: `astro check && astro build` (TypeScript errors block the build)
 - **Base URL**: `/blog` (all internal links must include this prefix)
