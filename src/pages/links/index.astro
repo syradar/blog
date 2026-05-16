@@ -6,10 +6,12 @@ import {
   getFacetOptions,
   toLinksExplorerRecords,
 } from "../../lib/links-explorer";
+import { buildLinksIndexSnapshot } from "../../lib/links-search";
 
 const linkWeeks = await getCollection("linkWeeks");
 const records = toLinksExplorerRecords(linkWeeks);
 const facets = getFacetOptions(records);
+const indexSnapshot = await buildLinksIndexSnapshot(records);
 ---
 
 <StarlightPage
@@ -28,7 +30,7 @@ const facets = getFacetOptions(records);
     <a href="/blog/links/weeks">Weekly Links Archive</a>.
   </p>
 
-  <LinksExplorer {records} {facets} client:load />
+  <LinksExplorer {records} {facets} {indexSnapshot} client:load />
 </StarlightPage>
 
 <style>

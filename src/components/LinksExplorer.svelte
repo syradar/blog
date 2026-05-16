@@ -1,10 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import {
-    createLinksIndex,
+    loadLinksIndex,
     searchLinks,
     type ExplorerFilters,
   } from "../lib/links-search";
+  import type { RawData } from "@orama/orama";
   import { isLinkCategory, type LinkCategory } from "../lib/linkCategories";
   import type { LinksExplorerRecord } from "../lib/links-explorer";
   import ExplorerControls from "./ExplorerControls.svelte";
@@ -13,15 +14,15 @@
   interface Props {
     records: LinksExplorerRecord[];
     facets: { tags: string[]; weeks: [string, string][] };
+    indexSnapshot: RawData;
   }
 
-  let { records, facets }: Props = $props();
+  let { records, facets, indexSnapshot }: Props = $props();
 
   let q = $state("");
   let selectedCategories = $state<LinkCategory[]>([]);
   let tag = $state("");
   let week = $state("");
-  let controlsDisabled = $state(false);
 
   const allVisibleIds = $derived(new Set(records.map((record) => record.id)));
   const recordsTotal = $derived(records.length);
@@ -36,7 +37,7 @@
   );
   const effectiveTotal = $derived(hasAppliedFilters ? total : recordsTotal);
 
-  let index: Awaited<ReturnType<typeof createLinksIndex>> | null = null;
+  let index: ReturnType<typeof loadLinksIndex> | null = null;
 
   function getFilters(): ExplorerFilters {
     return { q: q.trim(), categories: selectedCategories, tag, week };
@@ -83,7 +84,6 @@
     visibleIds = new Set(allVisibleIds);
     total = recordsTotal;
     hasAppliedFilters = true;
-    controlsDisabled = true;
   }
 
   function resetFilters(): void {
@@ -125,8 +125,7 @@
     syncFromUrl();
 
     try {
-      index = await createLinksIndex(records);
-      controlsDisabled = false;
+      index = loadLinksIndex(indexSnapshot);
       await applyFilters(false);
     } catch (error) {
       console.error("Links Explorer: failed to initialize search index", error);
@@ -148,7 +147,6 @@
 
 <ExplorerControls
   {facets}
-  {controlsDisabled}
   bind:q
   bind:selectedCategories
   bind:tag

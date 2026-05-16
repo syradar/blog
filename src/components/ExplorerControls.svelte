@@ -8,7 +8,6 @@
 
   interface Props {
     facets: { tags: string[]; weeks: [string, string][] };
-    controlsDisabled: boolean;
     onchange: () => void;
     q?: string;
     selectedCategories?: LinkCategory[];
@@ -18,7 +17,6 @@
 
   let {
     facets,
-    controlsDisabled,
     onchange,
     q = $bindable(""),
     selectedCategories = $bindable<LinkCategory[]>([]),
@@ -45,7 +43,6 @@
       type="search"
       placeholder="Search links"
       value={q}
-      disabled={controlsDisabled}
       oninput={(event) => {
         q = (event.currentTarget as HTMLInputElement).value;
         onchange();
@@ -72,7 +69,6 @@
           id="tag"
           name="tag"
           value={tag}
-          disabled={controlsDisabled}
           onchange={(event) => {
             tag = (event.currentTarget as HTMLSelectElement).value;
             onchange();
@@ -98,7 +94,6 @@
               class:is-other={isOther}
               aria-pressed={isPressed ? "true" : "false"}
               style="--category-color: {color}"
-              disabled={controlsDisabled}
               onclick={() => toggleCategory(category)}
             >
               <CategoryIcon {category} size="1.2rem" />
@@ -114,7 +109,6 @@
           id="week"
           name="week"
           value={week}
-          disabled={controlsDisabled}
           onchange={(event) => {
             week = (event.currentTarget as HTMLSelectElement).value;
             onchange();

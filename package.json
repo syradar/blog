@@ -2,7 +2,6 @@
   "name": "blog",
   "version": "0.0.1",
   "type": "module",
-  "packageManager": "pnpm@11.1.2",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -28,5 +27,6 @@
   "devDependencies": {
     "oxfmt": "^0.50.0",
     "oxlint": "^1.65.0"
-  }
+  },
+  "packageManager": "pnpm@11.1.2"
 }

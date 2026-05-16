@@ -1,4 +1,5 @@
-import { create, search, upsert } from "@orama/orama"
+import { create, load, save, search, upsert } from "@orama/orama"
+import type { RawData } from "@orama/orama"
 import type { LinkCategory } from "./linkCategories"
 import type { LinksExplorerRecord } from "./links-explorer"
 
@@ -27,21 +28,25 @@ export function normalizeFilters(input: Partial<ExplorerFilters>): ExplorerFilte
   }
 }
 
-export async function createLinksIndex(records: LinksExplorerRecord[]) {
-  const db = create({
-    schema: {
-      id: "string",
-      title: "string",
-      description: "string",
-      url: "string",
-      category: "string",
-      tags: "string[]",
-      weekKey: "string",
-      weekTitle: "string",
-      publishedAt: "number",
-      favorite: "boolean",
-    },
-  })
+const linksSchema = {
+  id: "string",
+  title: "string",
+  description: "string",
+  url: "string",
+  category: "string",
+  tags: "string[]",
+  weekKey: "string",
+  weekTitle: "string",
+  publishedAt: "number",
+  favorite: "boolean",
+} as const
+
+function createEmptyLinksDb() {
+  return create({ schema: linksSchema })
+}
+
+export async function buildLinksIndexSnapshot(records: LinksExplorerRecord[]): Promise<RawData> {
+  const db = createEmptyLinksDb()
 
   for (const record of records) {
     await upsert(db, {
@@ -50,6 +55,12 @@ export async function createLinksIndex(records: LinksExplorerRecord[]) {
     })
   }
 
+  return save(db)
+}
+
+export function loadLinksIndex(snapshot: RawData) {
+  const db = createEmptyLinksDb()
+  load(db, snapshot)
   return db
 }
 
@@ -82,7 +93,7 @@ function applyRecencySort(records: LinksExplorerRecord[]): LinksExplorerRecord[]
 }
 
 export async function searchLinks(
-  db: Awaited<ReturnType<typeof createLinksIndex>>,
+  db: ReturnType<typeof loadLinksIndex>,
   records: LinksExplorerRecord[],
   rawFilters: Partial<ExplorerFilters>,
 ): Promise<SearchLinksResult> {
