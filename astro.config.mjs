@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config"
 import starlight from "@astrojs/starlight"
+import svelte from "@astrojs/svelte"
 import icon from "astro-icon"
 import starlightLinksValidator from "starlight-links-validator"
 import rehypeSlug from "rehype-slug"
@@ -11,6 +12,7 @@ export default defineConfig({
   site: "https://syradar.github.io",
   base: "/blog",
   integrations: [
+    svelte(),
     icon(),
     starlight({
       title: "Syradar Blog",
