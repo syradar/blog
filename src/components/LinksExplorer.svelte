@@ -23,9 +23,18 @@
   let week = $state("");
   let controlsDisabled = $state(false);
 
-  let visibleIds = $state(new Set(records.map((record) => record.id)));
-  let total = $state(records.length);
+  const allVisibleIds = $derived(new Set(records.map((record) => record.id)));
+  const recordsTotal = $derived(records.length);
+
+  let visibleIds = $state(new Set<string>());
+  let total = $state(0);
+  let hasAppliedFilters = $state(false);
   let indexError = $state(false);
+
+  const effectiveVisibleIds = $derived(
+    hasAppliedFilters ? visibleIds : allVisibleIds,
+  );
+  const effectiveTotal = $derived(hasAppliedFilters ? total : recordsTotal);
 
   let index: Awaited<ReturnType<typeof createLinksIndex>> | null = null;
 
@@ -57,6 +66,7 @@
       const result = await searchLinks(index, records, getFilters());
       visibleIds = new Set(result.records.map((record) => record.id));
       total = result.total;
+      hasAppliedFilters = true;
       indexError = false;
 
       if (updateUrl) {
@@ -70,8 +80,9 @@
 
   function showRuntimeError(): void {
     indexError = true;
-    visibleIds = new Set(records.map((record) => record.id));
-    total = records.length;
+    visibleIds = new Set(allVisibleIds);
+    total = recordsTotal;
+    hasAppliedFilters = true;
     controlsDisabled = true;
   }
 
@@ -146,7 +157,9 @@
 />
 
 <div class="results-summary-container">
-  <p class="results-summary">Showing {total} of {records.length} links.</p>
+  <p class="results-summary">
+    Showing {effectiveTotal} of {recordsTotal} links.
+  </p>
 
   <button
     id="reset-filters"
@@ -160,7 +173,7 @@
 
 <ul class="cards-grid">
   {#each records as record (record.id)}
-    {@const isVisible = visibleIds.has(record.id)}
+    {@const isVisible = effectiveVisibleIds.has(record.id)}
     <li hidden={!isVisible} aria-hidden={isVisible ? "false" : "true"}>
       <LinkCard
         {record}
@@ -171,7 +184,7 @@
   {/each}
 </ul>
 
-{#if total === 0 && !indexError}
+{#if hasAppliedFilters && total === 0 && !indexError}
   <p class="empty-state">
     No links match your current filters. Try broadening your search or reset all
     filters.
