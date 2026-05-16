@@ -63,15 +63,17 @@
       return;
     }
 
+    const filters = getFilters();
+
     try {
-      const result = await searchLinks(index, records, getFilters());
+      const result = await searchLinks(index, records, filters);
       visibleIds = new Set(result.records.map((record) => record.id));
       total = result.total;
       hasAppliedFilters = true;
       indexError = false;
 
       if (updateUrl) {
-        history.replaceState(null, "", toUrl(getFilters()));
+        history.replaceState(null, "", toUrl(filters));
       }
     } catch (error) {
       console.error("Links Explorer: failed to apply filters", error);
