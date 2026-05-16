@@ -55,6 +55,7 @@ describe("links-search", () => {
     const index = await createLinksIndex(records)
     const result = await searchLinks(index, records, { q: "css", categories: ["Frontend"] })
     expect(result.total).toBe(2)
+    expect(result.records.map((record) => record.id).sort()).toEqual(["2026-w20-0", "2026-w20-1"])
     expect(result.records.every((record) => record.category === "Frontend")).toBe(true)
   })
 

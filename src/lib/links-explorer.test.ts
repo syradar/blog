@@ -71,6 +71,49 @@ describe("links-explorer", () => {
     expect(sorted.map((record) => record.id)).toEqual(["z", "a", "b"])
   })
 
+  it("sorts by id when publish dates are identical", () => {
+    const sorted = sortLinksExplorerRecords([
+      {
+        id: "c",
+        title: "C",
+        description: "",
+        url: "https://c.dev",
+        category: "Frontend",
+        tags: [],
+        weekKey: "2026-W20",
+        weekTitle: "2026 W20",
+        publishedAt: "2026-05-01T00:00:00.000Z",
+        favorite: false,
+      },
+      {
+        id: "a",
+        title: "A",
+        description: "",
+        url: "https://a.dev",
+        category: "Frontend",
+        tags: [],
+        weekKey: "2026-W20",
+        weekTitle: "2026 W20",
+        publishedAt: "2026-05-01T00:00:00.000Z",
+        favorite: false,
+      },
+      {
+        id: "b",
+        title: "B",
+        description: "",
+        url: "https://b.dev",
+        category: "Frontend",
+        tags: [],
+        weekKey: "2026-W20",
+        weekTitle: "2026 W20",
+        publishedAt: "2026-05-01T00:00:00.000Z",
+        favorite: false,
+      },
+    ])
+
+    expect(sorted.map((record) => record.id)).toEqual(["a", "b", "c"])
+  })
+
   it("flattens week entries and fills defaults", () => {
     const records = toLinksExplorerRecords([
       createWeek("2026-w20", "2026-W20", "2026-05-10", [
