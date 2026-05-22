@@ -1,0 +1,121 @@
+{
+  "title": "Links for 2026 W21",
+  "week": "2026-W21",
+  "publishedAt": "2026-05-22",
+  "links": [
+    {
+      "title": "Julia Evans moving from Tailwind to CSS",
+      "url": "https://jvns.ca/blog/2026/05/15/moving-away-from-tailwind--and-learning-to-structure-my-css-/",
+      "category": "Frontend",
+      "tags": ["CSS", "Tailwind"]
+    },
+    {
+      "title": "Tailwind and the Femininity of CSS",
+      "url": "https://thoughtbot.com/blog/tailwind-and-the-femininity-of-css",
+      "category": "Frontend",
+      "tags": ["CSS", "Tailwind"]
+    },
+    {
+      "title": "Classic rock, Mario Kart, and why we can't agree on Tailwind",
+      "url": "https://joshcollinsworth.com/blog/tailwind-is-smart-steering",
+      "category": "Frontend",
+      "tags": ["CSS", "Tailwind"]
+    },
+    {
+      "title": "We've made the world too complicated",
+      "url": "https://user8.bearblog.dev/the-world-is-too-complicated/",
+      "category": "Other",
+      "tags": ["Complexity", "Society"]
+    },
+    {
+      "title": "HN Comments: We've made the world too complicated",
+      "url": "https://news.ycombinator.com/item?id=48158065",
+      "category": "Other",
+      "tags": ["Complexity", "Society", "Hacker News"]
+    },
+    {
+      "title": "State of AI 2026 Results",
+      "url": "https://2026.stateofai.dev/en-US",
+      "category": "Other",
+      "tags": ["AI", "Survey"]
+    },
+    {
+      "title": "Accessibility for Everyone by Laura Kalbag",
+      "url": "https://accessibilityforeveryone.site/",
+      "category": "UX",
+      "tags": ["Accessibility", "Books"]
+    },
+    {
+      "title": "Better fluid sizing with round()",
+      "url": "https://ishadeed.com/article/css-round/",
+      "category": "Frontend",
+      "tags": ["CSS"]
+    },
+    {
+      "title": "A few ways of specifying per-theme colours in only CSS",
+      "url": "https://chrismorgan.info/css-themed-colours",
+      "category": "Frontend",
+      "tags": ["CSS", "Theming"]
+    },
+    {
+      "title": "Cross-Document View Transitions: The Gotchas Nobody Mentions",
+      "url": "https://css-tricks.com/cross-document-view-transitions-part-1/",
+      "category": "Frontend",
+      "tags": ["CSS", "View Transitions"]
+    },
+    {
+      "title": "The problem with HTML reset buttons",
+      "url": "https://adamsilver.io/blog/the-problem-with-html-reset-buttons/",
+      "category": "UX",
+      "tags": ["HTML", "Forms"]
+    },
+    {
+      "title": "CSS Database: What’s next for CSS?",
+      "url": "https://cssdb.org/",
+      "category": "Frontend",
+      "tags": ["CSS", "Web Platform"]
+    },
+    {
+      "title": "Project Hail Mary star map",
+      "url": "https://valhovey.github.io/gaia-mary/",
+      "category": "Other",
+      "tags": ["Data Visualization", "Space", "Fun"]
+    },
+    {
+      "title": "My Experience Using Kagi Search With Low Vision",
+      "url": "https://veroniiiica.com/using-kagi-search-with-low-vision/",
+      "category": "UX",
+      "tags": ["Accessibility", "Search"]
+    },
+    {
+      "title": "GitHub faces a fight for its survival at Microsoft",
+      "url": "https://www.theverge.com/tech/935250/microsoft-github-struggles-notepad",
+      "category": "Other",
+      "tags": ["Microsoft", "GitHub", "VCS"]
+    },
+    {
+      "title": "Google's Antigravity Bait and Switch",
+      "url": "https://www.0xsid.com/blog/antigravity-bait-n-switch",
+      "category": "Other",
+      "tags": ["Google", "AI"]
+    },
+    {
+      "title": "Entire: Git History for AI Agent Sessions",
+      "url": "https://entire.io/",
+      "category": "Other",
+      "tags": ["Tools", "AI", "VCS"]
+    },
+    {
+      "title": "Magic: The Gathering: Fun 40",
+      "url": "https://fabiensanglard.net/mtg/fun/",
+      "category": "Other",
+      "tags": ["Magic: The Gathering", "Fun"]
+    },
+    {
+      "title": "Magic: The Gathering: The Danger Room",
+      "url": "https://articles.starcitygames.com/articles/the-danger-room/",
+      "category": "Other",
+      "tags": ["Magic: The Gathering", "Fun"]
+    }
+  ]
+}
