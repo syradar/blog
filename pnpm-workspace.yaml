@@ -3,5 +3,6 @@ allowBuilds:
   sharp: true
 minimumReleaseAgeExclude:
   - astro@6.3.7
+  - svelte@5.56.2
 packages:
   - .
