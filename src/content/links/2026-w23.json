@@ -1,0 +1,175 @@
+{
+  "title": "Links for 2026 W23",
+  "week": "2026-W23",
+  "publishedAt": "2026-06-05",
+  "links": [
+    {
+      "title": "VoidZero Joins Cloudflare",
+      "url": "https://blog.cloudflare.com/voidzero-joins-cloudflare/",
+      "category": "Other",
+      "tags": [
+        "Cloudflare",
+        "Vite",
+        "Business",
+        "Developer Tools"
+      ]
+    },
+    {
+      "title": "Identify AI written content",
+      "url": "https://tropes.fyi/vetter",
+      "category": "Other",
+      "tags": [
+        "AI",
+        "Tools"
+      ]
+    },
+    {
+      "title": "The Unreasonable Effectiveness of Checklists",
+      "url": "https://rs.io/unreasonable-effectiveness-of-checklists/",
+      "category": "Other",
+      "tags": [
+        "Productivity",
+        "Process"
+      ]
+    },
+    {
+      "title": "Odysseus: self-hosted AI workspace",
+      "url": "https://pewdiepie-archdaemon.github.io/odysseus/",
+      "category": "Other",
+      "tags": [
+        "AI",
+        "Self-Hosting",
+        "Tools"
+      ]
+    },
+    {
+      "title": "Build collaborative apps with Hocuspocus",
+      "url": "https://tiptap.dev/docs/hocuspocus/getting-started/overview",
+      "category": "Backend",
+      "tags": [
+        "Collaboration",
+        "CRDT",
+        "TypeScript"
+      ]
+    },
+    {
+      "title": "How to Evaluate an npm Package in 2026",
+      "url": "https://blog.gaborkoos.com/posts/2026-05-29-How-to-Evaluate-an-npm-Package-2026-Edition/",
+      "category": "Backend",
+      "tags": [
+        "Security",
+        "NPM"
+      ]
+    },
+    {
+      "title": "Opt-in install-scripts policy in npm",
+      "url": "https://github.com/npm/cli/pull/9360",
+      "category": "Backend",
+      "tags": [
+        "NPM",
+        "Security"
+      ]
+    },
+    {
+      "title": "TypeScript tips everyone should know",
+      "url": "https://github.com/AllThingsSmitty/typescript-tips-everyone-should-know",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript"
+      ]
+    },
+    {
+      "title": "Intentionally blocking rendering with JavaScript",
+      "url": "https://www.jayfreestone.com/writing/intentional-render-blocking-javascript/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Performance",
+        "Web Platform"
+      ]
+    },
+    {
+      "title": "Why does tsgo use so much memory?",
+      "url": "https://zackoverflow.dev/writing/why-does-tsgo-use-so-much-memory",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Performance",
+        "Compilers"
+      ]
+    },
+    {
+      "title": "Your recursion is lying to you",
+      "url": "https://blog.gaborkoos.com/posts/2026-05-09-Your-Recursion-Is-Lying-to-You/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Performance"
+      ]
+    },
+    {
+      "title": "Your debounce is lying to you",
+      "url": "https://blog.gaborkoos.com/posts/2026-03-28-Your-Debounce-Is-Lying-to-You/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Performance"
+      ]
+    },
+    {
+      "title": "Your throttling is lying to you",
+      "url": "https://blog.gaborkoos.com/posts/2026-03-31-Your-Throttling-Is-Lying-to-You/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Performance"
+      ]
+    },
+    {
+      "title": "The Notebook: A History of Thinking on Paper",
+      "url": "https://www.goodreads.com/book/show/148014534-the-notebook",
+      "category": "Other",
+      "tags": [
+        "Books",
+        "Thinking"
+      ]
+    },
+    {
+      "title": "Threema: Swiss secure messaging app",
+      "url": "https://threema.com/en",
+      "category": "Other",
+      "tags": [
+        "Privacy",
+        "Security",
+        "Tools"
+      ]
+    },
+    {
+      "title": "Words of Type: Terms used in typography",
+      "url": "https://wiki.wordsoftype.com/",
+      "category": "UX",
+      "tags": [
+        "Typography",
+        "Design",
+        "Reference"
+      ]
+    },
+    {
+      "title": "New to the Web Platform in May 2026",
+      "url": "https://web.dev/blog/web-platform-05-2026",
+      "category": "Frontend",
+      "tags": [
+        "Web Platform",
+        "Browser Support"
+      ]
+    },
+    {
+      "title": "Front-End's Missing Metric: The Total Blocking Time Window",
+      "url": "https://csswizardry.com/2026/06/front-ends-missing-metric-the-tbt-window/",
+      "category": "Frontend",
+      "tags": [
+        "Performance"
+      ]
+    }
+  ]
+}
