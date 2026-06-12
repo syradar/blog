@@ -1,0 +1,214 @@
+{
+  "title": "Links for 2026 W24",
+  "week": "2026-W24",
+  "publishedAt": "2026-06-12",
+  "links": [
+    {
+      "title": "Everything you need to know about sourcemaps",
+      "url": "https://neciudan.dev/everything-you-need-to-know-about-sourcemaps",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript"
+      ]
+    },
+    {
+      "title": "Making Graphics Like It's 1993",
+      "url": "https://staniks.github.io/articles/catlantean-3d-blog-1/",
+      "category": "Frontend",
+      "tags": [
+        "Graphics"
+      ]
+    },
+    {
+      "title": "Modern engineering values",
+      "url": "https://cpojer.net/posts/modern-engineering-values",
+      "category": "Other",
+      "tags": [
+        "Engineering",
+        "Culture",
+        "AI"
+      ]
+    },
+    {
+      "title": "Frontend engineering archetypes",
+      "url": "https://cpojer.net/posts/frontend-engineering-archetypes",
+      "category": "Frontend",
+      "tags": [
+        "Frontend",
+        "Career"
+      ]
+    },
+    {
+      "title": "How TypeScript infers type variables",
+      "url": "https://norswap.com/typescript-type-variable-inference/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript"
+      ]
+    },
+    {
+      "title": "Cleaning up after AI rockstar developers",
+      "url": "https://www.codingwithjesse.com/blog/rockstar-developers/",
+      "category": "Other",
+      "tags": [
+        "AI",
+        "Engineering"
+      ]
+    },
+    {
+      "title": "Claude Fable 5 and Claude Mythos 5",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "category": "Other",
+      "tags": [
+        "AI",
+        "Claude"
+      ]
+    },
+    {
+      "title": "iOS 27 features we didn't see on stage",
+      "url": "https://techcrunch.com/2026/06/09/ios-27-features-we-didnt-see-on-stage/",
+      "category": "Other",
+      "tags": [
+        "Apple",
+        "iOS",
+        "WWDC"
+      ]
+    },
+    {
+      "title": "News from WWDC26: WebKit in Safari 27 beta",
+      "url": "https://webkit.org/blog/17967/news-from-wwdc26-webkit-in-safari-27-beta/",
+      "category": "Frontend",
+      "tags": [
+        "WebKit",
+        "Safari",
+        "Web Platform",
+        "WWDC"
+      ]
+    },
+    {
+      "title": "Content-aware heading levels",
+      "url": "https://www.matuzo.at/blog/2026/content-aware-headings",
+      "category": "Frontend",
+      "tags": [
+        "HTML"
+      ]
+    },
+    {
+      "title": "CSS @function deep dive",
+      "url": "https://frontendmasters.com/blog/the-fundamentals-and-dev-experience-of-css-function/",
+      "category": "Frontend",
+      "tags": [
+        "CSS"
+      ]
+    },
+    {
+      "title": "CSS gap rules for grid and flex",
+      "url": "https://utilitybend.com/blog/css-is-filling-the-gaps-with-rules-a-way-to-style-gaps-in-grid-and-flex",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Layout"
+      ]
+    },
+    {
+      "title": "Animate between pages using CSS view transitions",
+      "url": "https://www.rotecodefraktion.de/en/blog/css-view-transitions-zwischen-seiten/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "View Transitions"
+      ]
+    },
+    {
+      "title": "Scrubbable staggered animation with CSS @function",
+      "url": "https://master.dev/blog/scrubbable-staggered-animation-with-css-function/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Animation"
+      ]
+    },
+    {
+      "title": "WWDC26: Rediscover the HTML select element",
+      "url": "https://youtube.com/watch?v=ACsHgWwP9Io",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "HTML",
+        "Forms",
+        "Safari",
+        "WWDC"
+      ]
+    },
+    {
+      "title": "WWDC26: Learn CSS Grid Lanes",
+      "url": "https://youtube.com/watch?v=NDwoB2PpwgY",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Grid",
+        "Layout",
+        "Safari",
+        "WWDC"
+      ]
+    },
+    {
+      "title": "Answers for myths and pushback around accessibility",
+      "url": "https://stephaniewalter.design/blog/9-accessibility-myths-and-pushbacks-and-how-to-answer-them/",
+      "category": "UX",
+      "tags": [
+        "Accessibility",
+        "Communication"
+      ]
+    },
+    {
+      "title": "The Field Guide to Grid Lanes",
+      "url": "https://gridlanes.webkit.org/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Grid",
+        "Layout",
+        "WWDC"
+      ]
+    },
+    {
+      "title": "nsafs: Use NSA as cloud storage",
+      "url": "https://github.com/freedomtools/nsafs",
+      "category": "Other",
+      "tags": [
+        "Jokes",
+        "File System"
+      ]
+    },
+    {
+      "title": "πfs: Use pi as file storage",
+      "url": "https://github.com/philipl/pifs",
+      "category": "Other",
+      "tags": [
+        "Jokes",
+        "File System"
+      ]
+    },
+    {
+      "title": "Doing nothing at work",
+      "url": "https://www.seangoedecke.com/doing-nothing-at-work/",
+      "category": "Other",
+      "tags": [
+        "Work",
+        "Career",
+        "Engineering"
+      ]
+    },
+    {
+      "title": "HN Comments: Doing nothing at work",
+      "url": "https://news.ycombinator.com/item?id=48442880",
+      "category": "Other",
+      "tags": [
+        "Work",
+        "Career",
+        "Hacker News"
+      ]
+    }
+  ]
+}
