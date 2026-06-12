@@ -6,6 +6,7 @@ import icon from "astro-icon"
 import starlightLinksValidator from "starlight-links-validator"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import { unified } from "@astrojs/markdown-remark"
 
 // https://astro.build/config
 export default defineConfig({
@@ -80,24 +81,26 @@ export default defineConfig({
     }),
   ],
   markdown: {
-    rehypePlugins: [
-      rehypeSlug,
-      [
-        rehypeAutolinkHeadings,
-        {
-          behavior: "wrap",
-          content: {
-            type: "raw",
-            value: `<span aria-hidden="true">#</span>`,
+    processor: unified({
+      rehypePlugins: [
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            behavior: "wrap",
+            content: {
+              type: "raw",
+              value: `<span aria-hidden="true">#</span>`,
+            },
+            headingProperties: {
+              className: ["anchor"],
+            },
+            properties: {
+              className: ["anchor-link"],
+            },
           },
-          headingProperties: {
-            className: ["anchor"],
-          },
-          properties: {
-            className: ["anchor-link"],
-          },
-        },
+        ],
       ],
-    ],
+    }),
   },
 })
