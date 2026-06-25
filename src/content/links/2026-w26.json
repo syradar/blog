@@ -1,0 +1,136 @@
+{
+  "title": "Links for 2026 W26",
+  "week": "2026-W26",
+  "publishedAt": "2026-06-25",
+  "links": [
+    {
+      "title": "TypeScript 7.0 RC",
+      "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-rc/",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Releases",
+        "Performance"
+      ]
+    },
+    {
+      "title": "Experimental shared-memory threads for JavaScriptCore",
+      "url": "https://github.com/oven-sh/WebKit/pull/249",
+      "category": "Backend",
+      "tags": [
+        "JavaScript",
+        "WebKit",
+        "Performance"
+      ]
+    },
+    {
+      "title": "Vite 8.1",
+      "url": "https://vite.dev/blog/announcing-vite8-1",
+      "category": "Frontend",
+      "tags": [
+        "Vite",
+        "Releases",
+        "Performance"
+      ]
+    },
+    {
+      "title": "Astro 7.0",
+      "url": "https://astro.build/blog/astro-7/",
+      "category": "Frontend",
+      "tags": [
+        "Astro",
+        "Releases"
+      ]
+    },
+    {
+      "title": "What are Git worktrees and why should I use them?",
+      "url": "https://github.blog/ai-and-ml/github-copilot/what-are-git-worktrees-and-why-should-i-use-them/",
+      "category": "Other",
+      "tags": [
+        "Git",
+        "Tools"
+      ]
+    },
+    {
+      "title": "TanStack Start: a mental model for Next.js developers",
+      "url": "https://www.adarsha.dev/blog/tanstack-mental-model-for-nextjs-developers",
+      "category": "Frontend",
+      "tags": [
+        "TanStack",
+        "Next.js",
+        "React"
+      ]
+    },
+    {
+      "title": "PACT: Anonymous Credentials for the Web",
+      "url": "https://hacks.mozilla.org/2026/06/pact-anonymous-credentials-for-the-web/",
+      "category": "Other",
+      "tags": [
+        "Privacy",
+        "Security",
+        "Web Platform"
+      ]
+    },
+    {
+      "title": "Wiggly range slider with CSS",
+      "url": "https://css-tip.com/wiggly-range-slider/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Forms",
+        "Animation"
+      ]
+    },
+    {
+      "title": "Grid lanes and accessibility",
+      "url": "https://matuzo.at/blog/2026/grid-lanes-accessibility",
+      "category": "UX",
+      "tags": [
+        "Accessibility",
+        "CSS",
+        "Grid"
+      ]
+    },
+    {
+      "title": "Improving card patterns with anchor positioning",
+      "url": "https://thatemil.com/blog/clickable-surface-expansion-using-anchor-position/",
+      "category": "UX",
+      "tags": [
+        "CSS",
+        "Accessibility",
+        "Interaction"
+      ]
+    },
+    {
+      "title": "You don't need 'navigation' in navigation labels",
+      "url": "https://www.tempertemper.net/blog/theres-no-need-to-include-navigation-in-your-navigation-labels",
+      "category": "UX",
+      "tags": [
+        "Accessibility",
+        "Navigation",
+        "ARIA"
+      ]
+    },
+    {
+      "title": "Ending responsive images",
+      "url": "https://cloudfour.com/thinks/ending-responsive-images/",
+      "category": "Frontend",
+      "tags": [
+        "Images",
+        "Responsive Design",
+        "Web Platform"
+      ]
+    },
+    {
+      "title": "Taken: What your browser knows about you",
+      "url": "https://sinceyouarrived.world/taken",
+      "category": "Other",
+      "tags": [
+        "Privacy",
+        "Fingerprinting",
+        "Web",
+        "Experiment"
+      ]
+    }
+  ]
+}
