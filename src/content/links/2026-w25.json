@@ -1,0 +1,151 @@
+{
+  "title": "Links for 2026 W25",
+  "week": "2026-W25",
+  "publishedAt": "2026-06-25",
+  "links": [
+    {
+      "title": "But yak shaving is fun",
+      "url": "https://parksb.github.io/en/article/32.html",
+      "category": "Other",
+      "tags": [
+        "Engineering",
+        "Productivity"
+      ]
+    },
+    {
+      "title": "The Emoji Series",
+      "url": "https://shadycharacters.co.uk/series/emoji/",
+      "category": "Other",
+      "tags": [
+        "Typography",
+        "Emoji"
+      ]
+    },
+    {
+      "title": "The Emoji Series: Interview with Apple emoji designer Ollie Wagner",
+      "url": "https://shadycharacters.co.uk/2026/06/ollie-wagner/",
+      "category": "Other",
+      "tags": [
+        "Typography",
+        "Emoji"
+      ]
+    },
+    {
+      "title": "Building a real-world blog with Astro",
+      "url": "https://zellwk.com/blog/real-astro-blog-made-easy/",
+      "category": "Frontend",
+      "tags": [
+        "Astro",
+        "Content",
+        "Architecture"
+      ]
+    },
+    {
+      "title": "ESLint Plugin Unicorn provides 300+ rules for better TypeScript",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn",
+      "category": "Frontend",
+      "tags": [
+        "ESLint",
+        "TypeScript",
+        "Tools"
+      ]
+    },
+    {
+      "title": "Compile Zod schemas into zero-overhead validators",
+      "url": "https://github.com/gajus/zod-compiler",
+      "category": "Frontend",
+      "tags": [
+        "TypeScript",
+        "Zod",
+        "Performance"
+      ]
+    },
+    {
+      "title": "Calvin and Hobbes and the price of integrity",
+      "url": "https://therepublicofletters.substack.com/p/calvin-and-hobbes-and-the-price-of",
+      "category": "Other",
+      "tags": [
+        "Comics",
+        "Culture",
+        "Career"
+      ]
+    },
+    {
+      "title": "Bubbles: community-ranked independent blogs",
+      "url": "https://bubbles.town/",
+      "category": "Other",
+      "tags": [
+        "Blogs",
+        "Discovery"
+      ]
+    },
+    {
+      "title": "Introducing the MDN MCP server",
+      "url": "https://developer.mozilla.org/en-US/blog/introducing-mdn-mcp-server/",
+      "category": "Frontend",
+      "tags": [
+        "AI",
+        "MCP",
+        "Web Platform"
+      ]
+    },
+    {
+      "title": "The scope of CSS @function",
+      "url": "https://master.dev/blog/the-scope-of-css-function/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Functions"
+      ]
+    },
+    {
+      "title": "The golden rule of customizable select",
+      "url": "https://webkit.org/blog/18117/the-golden-rule-of-customizable-select/",
+      "category": "UX",
+      "tags": [
+        "Accessibility",
+        "HTML",
+        "Forms"
+      ]
+    },
+    {
+      "title": "Creating memorable web experiences with modern CSS",
+      "url": "https://css-tricks.com/creating-memorable-web-experiences-a-modern-css-toolkit/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Animation"
+      ]
+    },
+    {
+      "title": "MapKit JS 6",
+      "url": "https://webkit.org/blog/18027/discover-mapkit-js-6-rebuilt-for-todays-web-developer/",
+      "category": "Frontend",
+      "tags": [
+        "JavaScript",
+        "Maps",
+        "Apple"
+      ]
+    },
+    {
+      "title": "Storied Colors: The stories behind colors",
+      "url": "https://storiedcolors.com/",
+      "category": "UX",
+      "tags": [
+        "Colors",
+        "Design",
+        "History"
+      ]
+    },
+    {
+      "title": "Quake rendered in CSS",
+      "url": "https://cssquake.com/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "3D",
+        "Games"
+      ]
+    }
+  ]
+}
