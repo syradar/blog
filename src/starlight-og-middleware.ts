@@ -1,41 +1,39 @@
 import { defineRouteMiddleware } from "@astrojs/starlight/route-data"
 
 import {
-  getJsonLdForRoute,
-  getOgEntryForRoute,
-  getOgImagePath,
+  buildHeadForRoute,
   normalizeRoutePath,
 } from "./lib/og"
 
-type HeadEntry = {
-  tag: string
-  attrs?: Record<string, string | boolean | undefined> | undefined
-  content?: string | undefined
-}
-
 export const onRequest = defineRouteMiddleware(async (context, next) => {
+  const site = context.site
   const routePath = normalizeRoutePath(context.url.pathname)
-  const ogEntry = await getOgEntryForRoute(routePath)
+  const head = context.locals.starlightRoute.head
 
-  if (ogEntry && context.site) {
-    const imageUrl = new URL(getOgImagePath(ogEntry.routePath), context.site).toString()
-    const head = context.locals.starlightRoute.head
-    const jsonLd = await getJsonLdForRoute(routePath, context.site)
+  if (site) {
+    for (const entry of await buildHeadForRoute(routePath, site)) {
+      if (entry.tag === "meta") {
+        const attributeName = "name" in (entry.attrs ?? {}) ? "name" : "property"
+        const attributeValue = entry.attrs?.[attributeName]
+        const content = typeof entry.attrs?.content === "string" ? entry.attrs.content : undefined
 
-    appendMetaTag(head, "name", "description", ogEntry.description)
-    appendMetaTag(head, "property", "og:description", ogEntry.description)
-    appendMetaTag(head, "name", "twitter:description", ogEntry.description)
-    appendMetaTag(head, "property", "og:image", imageUrl)
-    appendMetaTag(head, "property", "og:image:alt", ogEntry.imageAlt)
-    appendMetaTag(head, "name", "twitter:image", imageUrl)
-    appendMetaTag(head, "name", "twitter:image:alt", ogEntry.imageAlt)
+        if (attributeValue && content) {
+          appendMetaTag(head, attributeName, String(attributeValue), content)
+        }
+        continue
+      }
 
-    if (jsonLd && !head.some((entry) => entry.tag === "script" && entry.attrs?.type === "application/ld+json")) {
-      head.push({
-        tag: "script",
-        attrs: { type: "application/ld+json" },
-        content: JSON.stringify(jsonLd),
-      })
+      if (
+        entry.tag === "script" &&
+        entry.attrs?.type === "application/ld+json" &&
+        !head.some(
+          (existingEntry) =>
+            existingEntry.tag === "script" &&
+            existingEntry.attrs?.type === "application/ld+json",
+        )
+      ) {
+        head.push(entry)
+      }
     }
   }
 
@@ -43,25 +41,21 @@ export const onRequest = defineRouteMiddleware(async (context, next) => {
 })
 
 function appendMetaTag(
-  head: HeadEntry[],
+  entries: App.Locals["starlightRoute"]["head"],
   attributeName: "name" | "property",
   attributeValue: string,
   content: string,
 ) {
-  const existingTag = head.find(
-    (entry: HeadEntry) =>
-      entry.tag === "meta" &&
-      entry.attrs?.[attributeName] === attributeValue,
+  const existingTag = entries.find(
+    (entry) => entry.tag === "meta" && entry.attrs?.[attributeName] === attributeValue,
   )
 
-  if (existingTag) {
-    if (existingTag.attrs) {
-      existingTag.attrs.content = content
-    }
+  if (existingTag?.attrs) {
+    existingTag.attrs.content = content
     return
   }
 
-  head.push({
+  entries.push({
     tag: "meta",
     attrs: {
       [attributeName]: attributeValue,

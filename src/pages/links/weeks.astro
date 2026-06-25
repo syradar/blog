@@ -3,6 +3,7 @@ import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
 import { getCollection } from "astro:content";
 import LinkCard from "../../components/link-card.astro";
 import { formatPublishedDate } from "../../lib/link-weeks";
+import { buildHeadForRoute } from "../../lib/og";
 
 const linkWeeks = await getCollection("linkWeeks");
 const sortedWeeks = linkWeeks.sort((a, b) => {
@@ -24,10 +25,12 @@ function getTopItems(items: string[], topN: number = 3): string[] {
     .slice(0, topN)
     .map(([item]) => item);
 }
+
+const head = Astro.site ? await buildHeadForRoute("/links/weeks", Astro.site) : [];
 ---
 
 <StarlightPage
-  frontmatter={{ title: "Weekly Archive", tableOfContents: false }}
+  frontmatter={{ title: "Weekly Archive", tableOfContents: false, head }}
 >
   <ul class="weeks-grid">
     {

@@ -7,17 +7,20 @@ import {
   toLinksExplorerRecords,
 } from "../../lib/links-explorer";
 import { buildLinksIndexSnapshot } from "../../lib/links-search";
+import { buildHeadForRoute } from "../../lib/og";
 
 const linkWeeks = await getCollection("linkWeeks");
 const records = toLinksExplorerRecords(linkWeeks);
 const facets = getFacetOptions(records);
 const indexSnapshot = await buildLinksIndexSnapshot(records);
+const head = Astro.site ? await buildHeadForRoute("/links", Astro.site) : [];
 ---
 
 <StarlightPage
   frontmatter={{
     title: "Link Collection",
     tableOfContents: false,
+    head,
   }}
 >
   <p class="page-intro">

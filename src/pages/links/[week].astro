@@ -1,6 +1,7 @@
 ---
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
 import { getCollection } from "astro:content";
+import { buildHeadForRoute } from "../../lib/og";
 
 export async function getStaticPaths() {
   const weeks = await getCollection("linkWeeks");
@@ -34,9 +35,12 @@ const groupedCategories = categoryOrder
     links: linksByCategory[category],
   }))
   .filter(({ links }) => links.length > 0);
+const head = Astro.site
+  ? await buildHeadForRoute(`/links/${week.data.week.toLowerCase()}`, Astro.site)
+  : [];
 ---
 
-<StarlightPage frontmatter={{ title: week.data.title, tableOfContents: false }}>
+<StarlightPage frontmatter={{ title: week.data.title, tableOfContents: false, head }}>
   {
     groupedCategories.map(({ category, links }) => (
       <section>
