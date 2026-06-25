@@ -1,3 +1,28 @@
+@import "@fontsource-variable/cascadia-code";
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("../assets/fonts/MonaSansVF.woff2") format("woff2");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-style: normal italic;
+  font-display: swap;
+}
+
+:root {
+  --sl-font: "Mona Sans";
+  --sl-font-mono: "Cascadia Code Variable";
+}
+
+html {
+  font-optical-sizing: auto;
+}
+
+main :where(code, pre, kbd, samp),
+.expressive-code {
+  font-family: var(--__sl-font-mono);
+}
+
 main kbd {
   border-radius: 0.25rem;
   font-size: var(--sl-text-2xs);
