@@ -24,27 +24,27 @@ type OgData = {
   byRoutePath: Map<string, OgRouteEntry>
 }
 
+export type HeadEntry = {
+  tag: "title" | "base" | "link" | "style" | "meta" | "script" | "noscript" | "template"
+  attrs?: Record<string, string | boolean | undefined>
+  content?: string
+}
+
+export type HeadConfig = HeadEntry[]
+
 const BASE_PATH = normalizeBasePath(import.meta.env.BASE_URL ?? "/")
 
 let ogDataPromise: Promise<OgData> | undefined
 
-export function getBasePath() {
+export function getBasePath(): string {
   return BASE_PATH
 }
 
-export function normalizeRoutePath(path: string) {
-  if (!path) {
-    return "/"
-  }
-
-  const withLeadingSlash = path.startsWith("/") ? path : `/${path}`
-  const withoutTrailingSlash =
-    withLeadingSlash.length > 1 ? withLeadingSlash.replace(/\/+$/, "") : withLeadingSlash
-
-  return withoutTrailingSlash || "/"
+export function normalizeRoutePath(path: string): string {
+  return normalizePlainPath(stripBasePath(normalizePlainPath(path)))
 }
 
-export function withBasePath(path: string) {
+export function withBasePath(path: string): string {
   const normalizedPath = normalizeRoutePath(path)
 
   if (BASE_PATH === "/") {
@@ -54,7 +54,7 @@ export function withBasePath(path: string) {
   return normalizedPath === "/" ? BASE_PATH : `${BASE_PATH}${normalizedPath}`
 }
 
-export function getOgImagePath(routePath: string) {
+export function getOgImagePath(routePath: string): string {
   const imageKey = routePathToImageKey(routePath)
   return withBasePath(`/open-graph/${imageKey}.png`)
 }
@@ -140,6 +140,58 @@ export async function getJsonLdForRoute(routePath: string, site: URL) {
       },
     ],
   }
+}
+
+export async function buildHeadForRoute(routePath: string, site: URL): Promise<HeadConfig> {
+  const normalizedRoutePath = normalizeRoutePath(routePath)
+  const ogEntry = await getOgEntryForRoute(normalizedRoutePath)
+  const jsonLd = await getJsonLdForRoute(normalizedRoutePath, site)
+  const head: HeadConfig = []
+
+  if (ogEntry) {
+    const imageUrl = new URL(getOgImagePath(ogEntry.routePath), site).toString()
+
+    head.push(
+      {
+        tag: "meta",
+        attrs: { name: "description", content: ogEntry.description },
+      },
+      {
+        tag: "meta",
+        attrs: { property: "og:description", content: ogEntry.description },
+      },
+      {
+        tag: "meta",
+        attrs: { name: "twitter:description", content: ogEntry.description },
+      },
+      {
+        tag: "meta",
+        attrs: { property: "og:image", content: imageUrl },
+      },
+      {
+        tag: "meta",
+        attrs: { property: "og:image:alt", content: ogEntry.imageAlt },
+      },
+      {
+        tag: "meta",
+        attrs: { name: "twitter:image", content: imageUrl },
+      },
+      {
+        tag: "meta",
+        attrs: { name: "twitter:image:alt", content: ogEntry.imageAlt },
+      },
+    )
+  }
+
+  if (jsonLd) {
+    head.push({
+      tag: "script",
+      attrs: { type: "application/ld+json" },
+      content: JSON.stringify(jsonLd),
+    })
+  }
+
+  return head
 }
 
 async function getOgData() {
@@ -278,9 +330,33 @@ function routePathToImageKey(routePath: string) {
   return normalizedPath.slice(1)
 }
 
-function normalizeBasePath(basePath: string) {
-  const normalized = normalizeRoutePath(basePath)
+function normalizeBasePath(basePath: string): string {
+  const normalized = normalizePlainPath(basePath)
   return normalized === "/" ? "/" : normalized.replace(/\/+$/, "")
+}
+
+function stripBasePath(path: string): string {
+  if (BASE_PATH === "/" || path === BASE_PATH) {
+    return path === BASE_PATH ? "/" : path
+  }
+
+  if (path.startsWith(`${BASE_PATH}/`)) {
+    return path.slice(BASE_PATH.length)
+  }
+
+  return path
+}
+
+function normalizePlainPath(path: string): string {
+  if (!path) {
+    return "/"
+  }
+
+  const withLeadingSlash = path.startsWith("/") ? path : `/${path}`
+  const withoutTrailingSlash =
+    withLeadingSlash.length > 1 ? withLeadingSlash.replace(/\/+$/, "") : withLeadingSlash
+
+  return withoutTrailingSlash || "/"
 }
 
 function buildBreadcrumbItems(

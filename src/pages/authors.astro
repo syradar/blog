@@ -1,9 +1,12 @@
 ---
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
 import AuthorCard from "../components/author-card.astro";
+import { buildHeadForRoute } from "../lib/og";
+
+const head = Astro.site ? await buildHeadForRoute("/authors", Astro.site) : [];
 ---
 
-<StarlightPage frontmatter={{ title: "Authors" }}>
+<StarlightPage frontmatter={{ title: "Authors", head }}>
   <p>This is a custom page with a custom component:</p>
   <div class="authors">
     <AuthorCard author="theo" />

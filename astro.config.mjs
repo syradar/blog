@@ -17,7 +17,7 @@ export default defineConfig({
     icon(),
     starlight({
       title: "Syradar Blog",
-      routeMiddleware: "./src/starlight-og-middleware.ts",
+      routeMiddleware: ["./src/starlight-og-middleware.ts"],
       social: [
         {
           icon: "github",

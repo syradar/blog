@@ -6,6 +6,7 @@ import {
   groupWeekSummariesByYear,
   type YearSummary,
 } from "../../../lib/link-weeks";
+import { buildHeadForRoute } from "../../../lib/og";
 
 export async function getStaticPaths() {
   const linkWeeks = await getCollection("linkWeeks");
@@ -22,10 +23,13 @@ interface Props {
 }
 
 const { group } = Astro.props;
+const head = Astro.site
+  ? await buildHeadForRoute(`/links/weeks/${group.year}`, Astro.site)
+  : [];
 ---
 
 <StarlightPage
-  frontmatter={{ title: `Weekly Links: ${group.year}`, tableOfContents: false }}
+  frontmatter={{ title: `Weekly Links: ${group.year}`, tableOfContents: false, head }}
 >
   <p class="year-summary">
     {group.weeks.length} weeks • {group.totalLinks} links
