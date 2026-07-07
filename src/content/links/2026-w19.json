@@ -7,7 +7,10 @@
       "title": "Anime.js, animation library",
       "url": "https://animejs.com/",
       "category": "Frontend",
-      "tags": ["TypeScript", "Animation"]
+      "tags": [
+        "TypeScript",
+        "Animation"
+      ]
     },
     {
       "title": "Type-safe forms with Formisch",
@@ -29,91 +32,146 @@
       "title": "Browser 3D physics with CrashCat",
       "url": "https://crashcat.dev/",
       "category": "Other",
-      "tags": ["TypeScript", "Physics", "3D"]
+      "tags": [
+        "TypeScript",
+        "Physics",
+        "3D"
+      ]
     },
     {
       "title": "Mozilla's opposition to Chrome's Prompt API",
       "url": "https://news.ycombinator.com/item?id=47959463",
       "category": "Other",
-      "tags": ["AI", "Browsers", "Prompt API"]
+      "tags": [
+        "AI",
+        "Browsers",
+        "Prompt API"
+      ]
     },
     {
       "title": "You are not your job",
       "url": "https://news.ycombinator.com/item?id=47478548",
       "category": "Other",
-      "tags": ["Career"]
+      "tags": [
+        "Career"
+      ]
     },
     {
       "title": "Media query range syntax",
       "url": "https://ishadeed.com/article/range-syntax/",
       "category": "Frontend",
-      "tags": ["CSS", "Media Queries", "Responsive Design"]
+      "tags": [
+        "CSS",
+        "Media Queries",
+        "Responsive Design"
+      ]
     },
     {
       "title": "Avoiding notch bugs with CSS safe-area insets",
       "url": "https://polypane.app/blog/using-safe-area-inset-to-build-mobile-safe-layouts/",
       "category": "Frontend",
-      "tags": ["CSS", "Layout", "Responsive Design"]
+      "tags": [
+        "CSS",
+        "Layout",
+        "Responsive Design"
+      ]
     },
     {
       "title": "Chrome's 4 GB AI model download raises privacy and consent concerns",
       "url": "https://www.thatprivacyguy.com/blog/chrome-silent-nano-install/",
       "category": "Other",
-      "tags": ["AI", "Privacy", "Browsers", "Prompt API"]
+      "tags": [
+        "AI",
+        "Privacy",
+        "Browsers",
+        "Prompt API"
+      ]
     },
     {
       "title": "Mozilla pushes back on Google's Prompt API plans",
       "url": "https://www.theregister.com/software/2026/04/30/mozilla-pushes-back-against-googles-prompt-api/5223409",
       "category": "Other",
-      "tags": ["AI", "Browsers", "Prompt API"]
+      "tags": [
+        "AI",
+        "Browsers",
+        "Prompt API"
+      ]
     },
     {
       "title": "Jake Archibald on browser AI and the Prompt API",
       "url": "https://bsky.app/profile/jakearchibald.com/post/3ml6gf7d77s25",
       "category": "Frontend",
-      "tags": ["AI", "Browsers", "Prompt API"]
+      "tags": [
+        "AI",
+        "Browsers",
+        "Prompt API"
+      ]
     },
     {
       "title": "Auditable JavaScript with WAICT",
       "url": "https://hacks.mozilla.org/2026/05/trustworthy-javascript-for-the-open-web/",
       "category": "Frontend",
-      "tags": ["Security", "TypeScript", "Browsers"]
+      "tags": [
+        "Security",
+        "TypeScript",
+        "Browsers"
+      ]
     },
     {
       "title": "Protecting the open web from AI crawl threats",
       "url": "https://hidde.blog/web-ai-breakout/",
       "category": "Other",
-      "tags": ["AI", "Web Standards"]
+      "tags": [
+        "AI",
+        "Web Standards"
+      ]
     },
     {
       "title": "Escaping cascade layers with !important",
       "url": "https://dbushell.com/2026/04/15/containment-breach-in-cascade-layer/",
       "category": "Frontend",
-      "tags": ["CSS", "Cascade Layers"]
+      "tags": [
+        "CSS",
+        "Cascade Layers"
+      ]
     },
     {
       "title": "Design QA with Playwright screenshots",
       "url": "https://calibreapp.com/blog/screenshot-pipeline-qa-review",
       "category": "UX",
-      "tags": ["Design", "Testing", "Tools", "Playwright"]
+      "tags": [
+        "Design",
+        "Testing",
+        "Tools",
+        "Playwright"
+      ]
     },
     {
       "title": "Practical guide to ARIA roles",
       "url": "https://www.levelaccess.com/blog/aria-roles-explained-a-practical-guide-for-web-developers/",
       "category": "UX",
-      "tags": ["Accessibility", "ARIA"]
+      "tags": [
+        "Accessibility",
+        "ARIA"
+      ]
     },
     {
       "title": "Multi-stroke text effect in CSS",
       "url": "https://yuanchuan.dev/multi-stroke-text-effect-in-css",
       "category": "Frontend",
-      "tags": ["CSS", "Typography"]
+      "tags": [
+        "CSS",
+        "Typography"
+      ]
     },
     {
       "title": "Proton Meet encrypted video conferencing",
       "url": "https://proton.me/business/blog/introducing-proton-meet",
       "category": "Other",
-      "tags": ["Privacy", "Tools"]
+      "tags": [
+        "Privacy",
+        "Tools"
+      ]
     }
   ]
 }
