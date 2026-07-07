@@ -1,0 +1,113 @@
+{
+  "title": "Links for 2026 W27",
+  "week": "2026-W27",
+  "publishedAt": "2026-07-07",
+  "links": [
+    {
+      "title": "The Goldilocks customizable select height",
+      "url": "https://jakearchibald.com/2026/goldilocks-select-height/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "Forms"
+      ]
+    },
+    {
+      "title": "The blurry line between CSS states and JavaScript events",
+      "url": "https://css-tricks.com/css-states-and-javascript-events/",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "TypeScript"
+      ]
+    },
+    {
+      "title": "Una Kravets: Modern UI Patterns",
+      "url": "https://youtube.com/watch?v=8FSLsVAJj2w",
+      "category": "Frontend",
+      "tags": [
+        "CSS",
+        "UI",
+        "Video"
+      ]
+    },
+    {
+      "title": "The primary purpose of code review is to find hard-to-maintain code",
+      "url": "https://mathstodon.xyz/@mjd/115096720350507897",
+      "category": "Other",
+      "tags": [
+        "Code Review",
+        "Maintainability"
+      ]
+    },
+    {
+      "title": "HN: The primary purpose of code review is to find hard-to-maintain code",
+      "url": "https://news.ycombinator.com/item?id=48759870",
+      "category": "Other",
+      "tags": [
+        "Code Review",
+        "Maintainability",
+        "Hacker News"
+      ]
+    },
+    {
+      "title": "Readability: Standardized Mentorship Through Code Review",
+      "url": "https://abseil.io/resources/swe-book/html/ch03.html#readability_standardized_mentorship_thr",
+      "category": "Other",
+      "tags": [
+        "Code Review",
+        "Maintainability"
+      ]
+    },
+    {
+      "title": "Software Engineering at Google",
+      "url": "https://abseil.io/resources/swe-book/html/toc.html",
+      "category": "Other",
+      "tags": [
+        "Book",
+        "Engineering",
+        "Google",
+        "Culture"
+      ]
+    },
+    {
+      "title": "How to ask for help from people who don't know you",
+      "url": "https://pradyuprasad.com/writings/how-to-ask-for-help/",
+      "category": "Other",
+      "tags": [
+        "Communication",
+        "Career"
+      ]
+    },
+    {
+      "title": "HN Comments: How to ask for help from people who don't know you",
+      "url": "https://news.ycombinator.com/item?id=48761118",
+      "category": "Other",
+      "tags": [
+        "Communication",
+        "Career",
+        "Hacker News"
+      ]
+    },
+    {
+      "title": "How To Ask Questions The Smart Way",
+      "url": "https://www.catb.org/esr/faqs/smart-questions.html",
+      "category": "Other",
+      "tags": [
+        "Communication",
+        "Career",
+        "catb"
+      ]
+    },
+    {
+      "title": "Podman 6.0",
+      "url": "https://blog.podman.io/2026/07/introducing-podman-v6-0-0/",
+      "category": "Backend",
+      "tags": [
+        "Podman",
+        "Containers",
+        "Releases"
+      ]
+    }
+  ]
+}
