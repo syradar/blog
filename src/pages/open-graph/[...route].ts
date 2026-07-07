@@ -3,7 +3,6 @@ import { OGImageRoute } from "astro-og-canvas"
 import { getOgPages } from "../../lib/og"
 
 export const { getStaticPaths, GET } = await OGImageRoute({
-  param: "route",
   pages: await getOgPages(),
   getImageOptions: (_, page) => ({
     title: page.title,
