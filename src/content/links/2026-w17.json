@@ -7,91 +7,133 @@
       "title": "Typography with container queries",
       "url": "https://mattwaler.com/blog/container-query-typography-systems/",
       "category": "Frontend",
-      "tags": ["CSS", "Typography", "Container Queries"]
+      "tags": [
+        "CSS",
+        "Typography",
+        "Container Queries"
+      ]
     },
     {
       "title": "Building a layout without breakpoints",
       "url": "https://frontendmasters.com/blog/building-a-ui-without-breakpoints/",
       "category": "Frontend",
-      "tags": ["CSS", "Layout", "Responsive Design"]
+      "tags": [
+        "CSS",
+        "Layout",
+        "Responsive Design"
+      ]
     },
     {
       "title": "Details that make interfaces feel better",
       "url": "https://jakub.kr/writing/details-that-make-interfaces-feel-better",
       "category": "UX",
-      "tags": ["Design"]
+      "tags": [
+        "Design"
+      ]
     },
     {
       "title": "The vertical codebase",
       "url": "https://tkdodo.eu/blog/the-vertical-codebase",
       "category": "Frontend",
-      "tags": ["TypeScript", "Architecture"]
+      "tags": [
+        "TypeScript",
+        "Architecture"
+      ]
     },
     {
       "title": "Why I don’t chain everything in JavaScript anymore",
       "url": "https://allthingssmitty.com/2026/04/20/why-i-dont-chain-everything-in-javascript-anymore/",
       "category": "Frontend",
-      "tags": ["TypeScript"]
+      "tags": [
+        "TypeScript"
+      ]
     },
     {
       "title": "The scope of TypeScript type guards and assertion functions",
       "url": "https://www.stefanjudis.com/today-i-learned/the-scope-of-type-guards-and-assertion-functions/",
       "category": "Frontend",
-      "tags": ["TypeScript", "Types"]
+      "tags": [
+        "TypeScript",
+        "Types"
+      ]
     },
     {
       "title": "Build with React, run on Salesforce",
       "url": "https://developer.salesforce.com/blogs/2026/04/build-with-react-run-on-salesforce-introducing-salesforce-multi-framework",
       "category": "Frontend",
-      "tags": ["React"]
+      "tags": [
+        "React"
+      ]
     },
     {
       "title": "HTML and CSS support in email clients",
       "url": "https://www.caniemail.com/",
       "category": "Email",
-      "tags": ["HTML"]
+      "tags": [
+        "HTML"
+      ]
     },
     {
       "title": "MJML for generating email HTML",
       "url": "https://mjml.io/",
       "category": "Email",
-      "tags": ["HTML"]
+      "tags": [
+        "HTML"
+      ]
     },
     {
       "title": "OKLCH colors in VS Code",
       "url": "https://marketplace.visualstudio.com/items?itemName=starbist.oklchanger#oklchanger",
       "category": "Other",
-      "tags": ["VS Code", "Extensions", "OKLCH"]
+      "tags": [
+        "VS Code",
+        "Extensions",
+        "OKLCH"
+      ]
     },
     {
       "title": "Keyboard sound visualization",
       "url": "https://sheets.works/data-viz/keyboard-sounds",
       "category": "Other",
-      "tags": ["Data Visualization", "Sound"]
+      "tags": [
+        "Data Visualization",
+        "Sound"
+      ]
     },
     {
       "title": "Artemis image gallery",
       "url": "https://www.nasa.gov/gallery/artemis/",
       "category": "Other",
-      "tags": ["Space", "NASA"]
+      "tags": [
+        "Space",
+        "NASA"
+      ]
     },
     {
       "title": "AI and hiring",
       "url": "https://www.artisan.co/blog/stop-hiring-humans",
       "category": "Other",
-      "tags": ["AI", "Recruitment"]
+      "tags": [
+        "AI",
+        "Recruitment"
+      ]
     },
     {
       "title": "Bonsai styles",
       "url": "https://longwoodgardens.org/blog/2023-05-17/beauty-bonsai-styles",
       "category": "Other",
-      "tags": ["Nature"]
+      "tags": [
+        "Nature"
+      ]
     },
     {
       "title": "Tim Cook’s impeccable timing",
       "url": "https://stratechery.com/2026/tim-cooks-impeccable-timing/",
       "category": "Other",
-      "tags": ["Apple", "Strategy"]
+      "tags": [
+        "Apple",
+        "Strategy"
+      ]
     }
   ]
 }

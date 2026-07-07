@@ -7,97 +7,145 @@
       "title": "Software engineering may no longer be a lifetime career",
       "url": "https://www.seangoedecke.com/software-engineering-may-no-longer-be-a-lifetime-career/",
       "category": "Other",
-      "tags": ["Career", "Engineering"]
+      "tags": [
+        "Career",
+        "Engineering"
+      ]
     },
     {
       "title": "HN Comments: Software engineering may no longer be a lifetime career",
       "url": "https://news.ycombinator.com/item?id=48095550",
       "category": "Other",
-      "tags": ["Career", "Engineering", "Hacker News"]
+      "tags": [
+        "Career",
+        "Engineering",
+        "Hacker News"
+      ]
     },
     {
       "title": "Learning Software Architecture",
       "url": "https://matklad.github.io/2026/05/12/software-architecture.html",
       "category": "Other",
-      "tags": ["Architecture"]
+      "tags": [
+        "Architecture"
+      ]
     },
     {
       "title": "HN Comments: Learning Software Architecture",
       "url": "https://news.ycombinator.com/item?id=48106024",
       "category": "Other",
-      "tags": ["Architecture", "Hacker News"]
+      "tags": [
+        "Architecture",
+        "Hacker News"
+      ]
     },
     {
       "title": "Untools: Thinking tools",
       "url": "https://untools.co/",
       "category": "Other",
-      "tags": ["Tools", "Productivity"]
+      "tags": [
+        "Tools",
+        "Productivity"
+      ]
     },
     {
       "title": "Rolldown 1.0",
       "url": "https://voidzero.dev/posts/announcing-rolldown-1-0",
       "category": "Frontend",
-      "tags": ["Tools", "Releases"]
+      "tags": [
+        "Tools",
+        "Releases"
+      ]
     },
     {
       "title": "33 JS Concepts",
       "url": "https://33jsconcepts.com/",
       "category": "Frontend",
-      "tags": ["TypeScript"]
+      "tags": [
+        "TypeScript"
+      ]
     },
     {
       "title": "Features of the Web Platform influenced by libraries",
       "url": "https://jadjoubran.io/blog/web-platform-influenced-by-libraries",
       "category": "Frontend",
-      "tags": ["Web Platform", "TypeScript"]
+      "tags": [
+        "Web Platform",
+        "TypeScript"
+      ]
     },
     {
       "title": "Nanotags, a Web Component library as a React alternative",
       "url": "https://evilmartians.com/chronicles/from-react-to-native-web-with-nanotags-a-migration-that-saved-100kb",
       "category": "Frontend",
-      "tags": ["Web Components", "React", "TypeScript"]
+      "tags": [
+        "Web Components",
+        "React",
+        "TypeScript"
+      ]
     },
     {
       "title": "Replacing boolean flags with option objects",
       "url": "https://allthingssmitty.com/2026/05/11/i-keep-tripping-over-true-false-true/",
       "category": "Frontend",
-      "tags": ["TypeScript", "Design"]
+      "tags": [
+        "TypeScript",
+        "Design"
+      ]
     },
     {
       "title": "JavaScript Decompiler",
       "url": "https://wakaru.vercel.app/",
       "category": "Frontend",
-      "tags": ["TypeScript", "Tools"]
+      "tags": [
+        "TypeScript",
+        "Tools"
+      ]
     },
     {
       "title": "VS Code Agents",
       "url": "https://code.visualstudio.com/docs/copilot/agents/agents-window",
       "category": "Other",
-      "tags": ["AI", "Tools", "VS Code"]
+      "tags": [
+        "AI",
+        "Tools",
+        "VS Code"
+      ]
     },
     {
       "title": "DMA Choice Screens increase Firefox market share",
       "url": "https://blog.mozilla.org/netpolicy/2026/05/11/six-million-selections-later-how-the-dma-is-giving-people-browser-choice/",
       "category": "Other",
-      "tags": ["Firefox", "Browsers"]
+      "tags": [
+        "Firefox",
+        "Browsers"
+      ]
     },
     {
       "title": "Zulip open-source team chat",
       "url": "https://zulip.com/",
       "category": "Other",
-      "tags": ["Tools", "Collaboration"]
+      "tags": [
+        "Tools",
+        "Collaboration"
+      ]
     },
     {
       "title": "How GitHub improved Issues navigation performance",
       "url": "https://github.blog/engineering/architecture-optimization/from-latency-to-instant-modernizing-github-issues-navigation-performance/",
       "category": "Frontend",
-      "tags": ["Performance"]
+      "tags": [
+        "Performance"
+      ]
     },
     {
       "title": "Mark Erikson's thoughts on AI and the future of software development",
       "url": "https://blog.isquaredsoftware.com/2026/05/ai-thoughts-part-1-fears-opinions-journey/",
       "category": "Other",
-      "tags": ["AI", "Engineering"]
+      "tags": [
+        "AI",
+        "Engineering"
+      ]
     }
   ]
 }
