@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest"
-import { getFacetOptions, sortLinksExplorerRecords, toLinksExplorerRecords } from "./links-explorer"
+import {
+  getFacetOptions,
+  groupLinksExplorerRecords,
+  isLinksGroupBy,
+  sortLinksExplorerRecords,
+  toLinksExplorerRecords,
+  UNTITLED_TAG_GROUP,
+} from "./links-explorer"
 
 function createWeek(
   id: string,
@@ -185,5 +192,110 @@ describe("links-explorer", () => {
       ["2026-W20", "2026 W20"],
       ["2026-W19", "2026 W19"],
     ])
+  })
+
+  it("accepts only known group modes", () => {
+    expect(isLinksGroupBy("none")).toBe(true)
+    expect(isLinksGroupBy("category")).toBe(true)
+    expect(isLinksGroupBy("tag")).toBe(true)
+    expect(isLinksGroupBy("week")).toBe(true)
+    expect(isLinksGroupBy("tags")).toBe(false)
+  })
+
+  it("groups records by category using canonical category order", () => {
+    const groups = groupLinksExplorerRecords([
+      {
+        id: "1",
+        title: "A",
+        description: "",
+        url: "https://a.dev",
+        category: "Backend",
+        tags: ["api"],
+        weekKey: "2026-W20",
+        weekTitle: "2026 W20",
+        publishedAt: "2026-05-10T00:00:00.000Z",
+        favorite: false,
+      },
+      {
+        id: "2",
+        title: "B",
+        description: "",
+        url: "https://b.dev",
+        category: "Frontend",
+        tags: ["css"],
+        weekKey: "2026-W19",
+        weekTitle: "2026 W19",
+        publishedAt: "2026-05-03T00:00:00.000Z",
+        favorite: false,
+      },
+    ], "category")
+
+    expect(groups.map((group) => group.title)).toEqual(["Frontend", "Backend"])
+    expect(groups.map((group) => group.count)).toEqual([1, 1])
+  })
+
+  it("duplicates records across tag groups and adds untagged fallback", () => {
+    const groups = groupLinksExplorerRecords([
+      {
+        id: "1",
+        title: "A",
+        description: "",
+        url: "https://a.dev",
+        category: "Frontend",
+        tags: ["animation", "css"],
+        weekKey: "2026-W20",
+        weekTitle: "2026 W20",
+        publishedAt: "2026-05-10T00:00:00.000Z",
+        favorite: false,
+      },
+      {
+        id: "2",
+        title: "B",
+        description: "",
+        url: "https://b.dev",
+        category: "Other",
+        tags: [],
+        weekKey: "2026-W19",
+        weekTitle: "2026 W19",
+        publishedAt: "2026-05-03T00:00:00.000Z",
+        favorite: false,
+      },
+    ], "tag")
+
+    expect(groups.map((group) => group.title)).toEqual(["animation", "css", UNTITLED_TAG_GROUP])
+    expect(groups.find((group) => group.title === "animation")?.records.map((record) => record.id)).toEqual(["1"])
+    expect(groups.find((group) => group.title === "css")?.records.map((record) => record.id)).toEqual(["1"])
+    expect(groups.find((group) => group.title === UNTITLED_TAG_GROUP)?.records.map((record) => record.id)).toEqual(["2"])
+  })
+
+  it("groups weeks in descending week order", () => {
+    const groups = groupLinksExplorerRecords([
+      {
+        id: "1",
+        title: "A",
+        description: "",
+        url: "https://a.dev",
+        category: "Frontend",
+        tags: ["css"],
+        weekKey: "2026-W19",
+        weekTitle: "2026 W19",
+        publishedAt: "2026-05-03T00:00:00.000Z",
+        favorite: false,
+      },
+      {
+        id: "2",
+        title: "B",
+        description: "",
+        url: "https://b.dev",
+        category: "Frontend",
+        tags: ["css"],
+        weekKey: "2026-W20",
+        weekTitle: "2026 W20",
+        publishedAt: "2026-05-10T00:00:00.000Z",
+        favorite: false,
+      },
+    ], "week")
+
+    expect(groups.map((group) => group.title)).toEqual(["2026 W20", "2026 W19"])
   })
 })

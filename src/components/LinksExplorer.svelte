@@ -1,13 +1,18 @@
 <script lang="ts">
+  import type { RawData } from "@orama/orama";
   import { onMount } from "svelte";
+  import { isLinkCategory, type LinkCategory } from "../lib/linkCategories";
+  import {
+    groupLinksExplorerRecords,
+    isLinksGroupBy,
+    type LinksExplorerRecord,
+    type LinksGroupBy,
+  } from "../lib/links-explorer";
   import {
     loadLinksIndex,
     searchLinks,
     type ExplorerFilters,
   } from "../lib/links-search";
-  import type { RawData } from "@orama/orama";
-  import { isLinkCategory, type LinkCategory } from "../lib/linkCategories";
-  import type { LinksExplorerRecord } from "../lib/links-explorer";
   import ExplorerControls from "./ExplorerControls.svelte";
   import LinkCard from "./LinkCard.svelte";
 
@@ -23,19 +28,20 @@
   let selectedCategories = $state<LinkCategory[]>([]);
   let tag = $state("");
   let week = $state("");
+  let groupBy = $state<LinksGroupBy>("none");
 
-  const allVisibleIds = $derived(new Set(records.map((record) => record.id)));
   const recordsTotal = $derived(records.length);
 
-  let visibleIds = $state(new Set<string>());
+  let visibleRecords = $state<LinksExplorerRecord[]>([]);
   let total = $state(0);
   let hasAppliedFilters = $state(false);
   let indexError = $state(false);
+  let openSections = $state<string[]>([]);
+  let previousGroupBy = $state<LinksGroupBy>("none");
 
-  const effectiveVisibleIds = $derived(
-    hasAppliedFilters ? visibleIds : allVisibleIds,
-  );
+  const effectiveRecords = $derived(hasAppliedFilters ? visibleRecords : records);
   const effectiveTotal = $derived(hasAppliedFilters ? total : recordsTotal);
+  const groupedRecords = $derived(groupLinksExplorerRecords(effectiveRecords, groupBy));
 
   let index: ReturnType<typeof loadLinksIndex> | null = null;
 
@@ -45,13 +51,19 @@
 
   function toUrl(filters: ExplorerFilters): string {
     const params = new URLSearchParams();
+
     if (filters.q) params.set("q", filters.q);
+
     for (const category of filters.categories) {
       params.append("category", category);
     }
+
     if (filters.tag) params.set("tag", filters.tag);
     if (filters.week) params.set("week", filters.week);
+    if (groupBy !== "none") params.set("group", groupBy);
+
     const query = params.toString();
+
     return query
       ? `${window.location.pathname}?${query}`
       : window.location.pathname;
@@ -67,7 +79,7 @@
 
     try {
       const result = await searchLinks(index, records, filters);
-      visibleIds = new Set(result.records.map((record) => record.id));
+      visibleRecords = result.records;
       total = result.total;
       hasAppliedFilters = true;
       indexError = false;
@@ -87,7 +99,8 @@
     selectedCategories = [];
     tag = "";
     week = "";
-    visibleIds = new Set(allVisibleIds);
+    groupBy = "none";
+    visibleRecords = records;
     total = recordsTotal;
     hasAppliedFilters = true;
   }
@@ -97,6 +110,8 @@
     selectedCategories = [];
     tag = "";
     week = "";
+    groupBy = "none";
+    openSections = [];
     void applyFilters();
   }
 
@@ -116,8 +131,19 @@
     void applyFilters();
   }
 
+  function toggleSection(key: string): void {
+    openSections = openSections.includes(key)
+      ? openSections.filter((value) => value !== key)
+      : [...openSections, key];
+  }
+
+  function toGroupPanelId(key: string): string {
+    return `group-panel-${encodeURIComponent(key)}`
+  }
+
   function syncFromUrl(): void {
     const params = new URLSearchParams(window.location.search);
+    const nextGroup = params.get("group") ?? "";
 
     q = params.get("q") ?? "";
     selectedCategories = params
@@ -125,7 +151,16 @@
       .filter((category): category is LinkCategory => isLinkCategory(category));
     tag = params.get("tag") ?? "";
     week = params.get("week") ?? "";
+    groupBy = isLinksGroupBy(nextGroup) ? nextGroup : "none";
+    openSections = [];
   }
+
+  $effect(() => {
+    if (groupBy !== previousGroupBy) {
+      openSections = [];
+      previousGroupBy = groupBy;
+    }
+  });
 
   onMount(() => {
     syncFromUrl();
@@ -160,6 +195,7 @@
   bind:selectedCategories
   bind:tag
   bind:week
+  bind:groupBy
   onchange={() => void applyFilters()}
 />
 
@@ -179,18 +215,56 @@
   </button>
 </div>
 
-<ul class="cards-grid">
-  {#each records as record (record.id)}
-    {@const isVisible = effectiveVisibleIds.has(record.id)}
-    <li hidden={!isVisible} aria-hidden={isVisible ? "false" : "true"}>
-      <LinkCard
-        {record}
-        oncategoryclick={handleCategoryChipClick}
-        ontagclick={handleTagChipClick}
-      />
-    </li>
-  {/each}
-</ul>
+{#if groupBy === "none"}
+  <ul class="cards-grid">
+    {#each effectiveRecords as record (record.id)}
+      <li>
+        <LinkCard
+          {record}
+          oncategoryclick={handleCategoryChipClick}
+          ontagclick={handleTagChipClick}
+        />
+      </li>
+    {/each}
+  </ul>
+{:else}
+  <div class="grouped-results">
+    {#each groupedRecords as group (group.key)}
+      {@const isOpen = openSections.includes(group.key)}
+      <section class="group-accordion">
+        <button
+          type="button"
+          class="group-accordion__toggle"
+          aria-expanded={isOpen ? "true" : "false"}
+          aria-controls={toGroupPanelId(group.key)}
+          onclick={() => toggleSection(group.key)}
+        >
+          <span>{group.title} ({group.count})</span>
+        </button>
+
+        <div
+          id={toGroupPanelId(group.key)}
+          class="group-accordion__panel"
+          class:is-open={isOpen}
+        >
+          <div class="group-accordion__content">
+            <ul class="cards-grid cards-grid--grouped">
+              {#each group.records as record (`${group.key}:${record.id}`)}
+                <li>
+                  <LinkCard
+                    {record}
+                    oncategoryclick={handleCategoryChipClick}
+                    ontagclick={handleTagChipClick}
+                  />
+                </li>
+              {/each}
+            </ul>
+          </div>
+        </div>
+      </section>
+    {/each}
+  </div>
+{/if}
 
 {#if hasAppliedFilters && total === 0 && !indexError}
   <p class="empty-state">
@@ -245,6 +319,10 @@
     grid-template-columns: 1fr;
   }
 
+  .cards-grid--grouped {
+    margin: 0;
+  }
+
   @starting-style {
     .cards-grid li {
       opacity: 0.25;
@@ -262,11 +340,6 @@
     transition-behavior: allow-discrete;
   }
 
-  .cards-grid li[hidden] {
-    opacity: 0.25;
-    display: none !important;
-  }
-
   @supports (grid-template-rows: subgrid) {
     .cards-grid {
       grid-auto-rows: auto auto;
@@ -277,6 +350,83 @@
       grid-row: span 2;
       align-items: normal;
     }
+  }
+
+  .grouped-results {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .group-accordion {
+    border: 0;
+    background: transparent;
+  }
+
+  .group-accordion__toggle {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: var(--sl-color-white);
+    padding: 1rem 0 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    border-bottom: 1px solid var(--sl-color-gray-5);
+  }
+
+  .group-accordion__toggle::after {
+    content: "+";
+    color: var(--sl-color-gray-2);
+    font-size: 1.15rem;
+    line-height: 1;
+  }
+
+  .group-accordion__toggle[aria-expanded="true"]::after {
+    content: "\2212";
+  }
+
+  .group-accordion__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    min-height: 0;
+    transition: grid-template-rows 0.4s;
+    will-change: grid-template-rows;
+    transition-timing-function: linear(
+      0,
+      0.013 1%,
+      0.051 2.2%,
+      0.404 9.8%,
+      0.51 12.6%,
+      0.602 15.5%,
+      0.683 18.7%,
+      0.754 22.2%,
+      0.813 26%,
+      0.861 30.2%,
+      0.9 34.8%,
+      0.931 40%,
+      0.972 52.7%,
+      0.992 70.2%,
+      1
+    );
+  }
+
+  .group-accordion__panel.is-open {
+    grid-template-rows: 1fr;
+  }
+
+  .group-accordion__content {
+    overflow: hidden;
+    min-height: 0;
+    padding: 0;
+  }
+
+  .group-accordion__panel.is-open .group-accordion__content {
+    padding: 0.9rem 0 1rem;
   }
 
   .empty-state {
