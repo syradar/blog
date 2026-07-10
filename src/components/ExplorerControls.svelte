@@ -5,6 +5,7 @@
     linkCategories,
     type LinkCategory,
   } from "../lib/linkCategories";
+  import type { LinksGroupBy } from "../lib/links-explorer";
 
   interface Props {
     facets: { tags: string[]; weeks: [string, string][] };
@@ -14,6 +15,7 @@
     selectedCategories?: LinkCategory[];
     tag?: string;
     week?: string;
+    groupBy?: LinksGroupBy;
   }
 
   let {
@@ -24,6 +26,7 @@
     selectedCategories = $bindable<LinkCategory[]>([]),
     tag = $bindable(""),
     week = $bindable(""),
+    groupBy = $bindable<LinksGroupBy>("none"),
   }: Props = $props();
 
   let filtersOpen = $state(false);
@@ -134,6 +137,26 @@
           {/each}
         </select>
       </label>
+
+      <label class="control-group">
+        <span>Group by</span>
+        <select
+          id="groupBy"
+          name="groupBy"
+          disabled={disabled}
+          value={groupBy}
+          onchange={(event) => {
+            groupBy = (event.currentTarget as HTMLSelectElement)
+              .value as LinksGroupBy;
+            onchange();
+          }}
+        >
+          <option value="none">None</option>
+          <option value="category">Category</option>
+          <option value="tag">Tag</option>
+          <option value="week">Week</option>
+        </select>
+      </label>
     </div>
   </div>
 </section>
@@ -163,6 +186,7 @@
     display: grid;
     grid-template-rows: 0fr;
     overflow: hidden;
+    min-height: 0;
     transition: grid-template-rows 0.4s;
     will-change: grid-template-rows;
     transition-timing-function: linear(
@@ -191,11 +215,17 @@
   .filters-panel__content {
     display: grid;
     gap: 0.75rem;
-    padding-block: 0.5rem;
+    padding-block: 0;
     overflow: hidden;
+    min-height: 0;
     grid-template-areas:
       "tag week"
+      "group group"
       "categories categories";
+  }
+
+  .filters-panel.is-open .filters-panel__content {
+    padding-block: 0.5rem;
   }
 
   .controls label {
@@ -250,6 +280,10 @@
 
   .control-week {
     grid-area: week;
+  }
+
+  .control-group {
+    grid-area: group;
   }
 
   .category-filter-group {
@@ -352,6 +386,7 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       grid-template-areas:
         "tag week"
+        "group group"
         "categories categories";
       align-items: end;
     }
