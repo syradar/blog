@@ -1,0 +1,98 @@
+{
+    "title": "Links for 2026 W28",
+    "week": "2026-W28",
+    "publishedAt": "2026-07-18",
+    "links": [
+        {
+            "title": "TypeScript 7.0",
+            "url": "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/",
+            "category": "Frontend",
+            "tags": [
+                "TypeScript",
+                "Releases"
+            ]
+        },
+        {
+            "title": "Getting started with CSS Anchor Positioning",
+            "url": "https://www.joshwcomeau.com/css/anchor-positioning/",
+            "category": "Frontend",
+            "tags": [
+                "CSS",
+                "Anchor Positioning",
+                "Layout"
+            ]
+        },
+        {
+            "title": "What's new in ECMAScript 2026",
+            "url": "https://pawelgrzybek.com/whats-new-in-ecmascript-2026/",
+            "category": "Frontend",
+            "tags": [
+                "TypeScript",
+                "Web Platform"
+            ]
+        },
+        {
+            "title": "Ponytail: make AI agents write less code",
+            "url": "https://ponytail.dev/",
+            "category": "Other",
+            "tags": [
+                "AI",
+                "Tools"
+            ]
+        },
+        {
+            "title": "Harness engineering for self-improving AI agents",
+            "url": "https://lilianweng.github.io/posts/2026-07-04-harness/",
+            "category": "Other",
+            "tags": [
+                "AI"
+            ]
+        },
+        {
+            "title": "Introducing Baseline Alerts",
+            "url": "https://web.dev/blog/baseline-alerts",
+            "category": "Frontend",
+            "tags": [
+                "Baseline",
+                "Browser Support",
+                "Web Platform"
+            ]
+        },
+        {
+            "title": "CSS border-shape",
+            "url": "https://css-tricks.com/get-ready-for-the-powerful-css-border-shape-property/",
+            "category": "Frontend",
+            "tags": [
+                "CSS"
+            ]
+        },
+        {
+            "title": "Fluid typography with CSS progress()",
+            "url": "https://master.dev/blog/fluid-typography-with-progress/",
+            "category": "Frontend",
+            "tags": [
+                "CSS",
+                "Typography"
+            ]
+        },
+        {
+            "title": "GTA 2 ported to JavaScript",
+            "url": "https://gta2js.vercel.app/",
+            "category": "Frontend",
+            "tags": [
+                "TypeScript",
+                "Games"
+            ]
+        },
+        {
+            "title": "New to the Web Platform in June 2026",
+            "url": "https://web.dev/blog/web-platform-06-2026",
+            "category": "Frontend",
+            "tags": [
+                "Web Platform",
+                "Browser Support",
+                "Baseline"
+            ]
+        }
+    ]
+}
