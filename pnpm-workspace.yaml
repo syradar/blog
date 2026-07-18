@@ -70,5 +70,11 @@ minimumReleaseAgeExclude:
   - oxfmt@0.58.0
   - oxlint@1.73.0
   - vitest@4.1.10
+  - yaml@2.8.3
+  - tar@7.5.16
+  - undici@7.28.0
+  - js-yaml@4.1.2
+overrides:
+  yaml@>=2.0.0 <2.8.3: ^2.8.3
 packages:
   - .
