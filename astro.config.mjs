@@ -1,19 +1,22 @@
 // @ts-check
 import { defineConfig } from "astro/config"
 import starlight from "@astrojs/starlight"
-import svelte from "@astrojs/svelte"
+import vue from "@astrojs/vue"
 import icon from "astro-icon"
 import starlightLinksValidator from "starlight-links-validator"
 import rehypeSlug from "rehype-slug"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import { unified } from "@astrojs/markdown-remark"
 
+// Pinia's Node entry expects Vue's production feature flag during Astro prerendering.
+Object.assign(globalThis, { __VUE_PROD_DEVTOOLS__: false })
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://syradar.github.io",
   base: "/blog",
   integrations: [
-    svelte(),
+    vue({ appEntrypoint: "./src/vue-app.ts" }),
     icon(),
     starlight({
       title: "Syradar Blog",
