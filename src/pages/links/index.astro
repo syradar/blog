@@ -29,8 +29,9 @@ const head = Astro.site ? await buildHeadForRoute("/links", Astro.site) : [];
   </p>
 
   <p class="archive-link">
-    Prefer browsing by issue? Visit
-    <a href="/blog/links/weeks">Weekly Links Archive</a>.
+    Prefer browsing by issue? Visit <a href="/blog/links/weeks"
+      >Weekly Links Archive</a
+    >.
   </p>
 
   <LinksExplorer {records} {facets} {indexSnapshot} client:load />
