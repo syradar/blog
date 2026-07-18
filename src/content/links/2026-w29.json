@@ -1,0 +1,137 @@
+{
+    "title": "Links for 2026 W29",
+    "week": "2026-W29",
+    "publishedAt": "2026-07-18",
+    "links": [
+        {
+            "title": "How to ask for help from people who don't know you",
+            "url": "https://news.ycombinator.com/item?id=48761118",
+            "category": "Other",
+            "tags": [
+                "Communication",
+                "Career",
+                "Hacker News"
+            ]
+        },
+        {
+            "title": "Why write code in 2026",
+            "url": "https://softwaredoug.com/blog/2026/07/09/write-code",
+            "category": "Other",
+            "tags": [
+                "AI",
+                "Engineering",
+                "Career"
+            ]
+        },
+        {
+            "title": "HN Comments: Why write code in 2026",
+            "url": "https://news.ycombinator.com/item?id=48861923",
+            "category": "Other",
+            "tags": [
+                "AI",
+                "Engineering",
+                "Hacker News"
+            ]
+        },
+        {
+            "title": "Control the ideas, not the code",
+            "url": "https://antirez.com/news/169",
+            "category": "Other",
+            "tags": [
+                "AI",
+                "Engineering",
+                "Architecture"
+            ]
+        },
+        {
+            "title": "HN Comments: Control the ideas, not the code",
+            "url": "https://news.ycombinator.com/item?id=48891184",
+            "category": "Other",
+            "tags": [
+                "AI",
+                "Engineering",
+                "Hacker News"
+            ]
+        },
+        {
+            "title": "Write code like a human will maintain it",
+            "url": "https://unstack.io/write-code-like-a-human-will-maintain-it",
+            "category": "Other",
+            "tags": [
+                "AI",
+                "Maintainability",
+                "Engineering"
+            ]
+        },
+        {
+            "title": "HN Comments: Write code like a human will maintain it",
+            "url": "https://news.ycombinator.com/item?id=48859701",
+            "category": "Other",
+            "tags": [
+                "AI",
+                "Maintainability",
+                "Hacker News"
+            ]
+        },
+        {
+            "title": "Just let me write digits",
+            "url": "https://gendx.dev/blog/2026/07/13/input-digits.html",
+            "category": "Frontend",
+            "tags": [
+                "HTML",
+                "Forms",
+                "Input"
+            ]
+        },
+        {
+            "title": "Understand Legacy Code",
+            "url": "https://understandlegacycode.com/",
+            "category": "Other",
+            "tags": [
+                "Legacy Code",
+                "Refactoring",
+                "Books"
+            ]
+        },
+        {
+            "title": "Visualizing the systems behind our designs",
+            "url": "https://uxdesign.cc/visualizing-the-systems-behind-our-designs-7a7c95b4cfb2",
+            "category": "UX",
+            "tags": [
+                "Systems Thinking",
+                "Design",
+                "Visualization"
+            ]
+        },
+        {
+            "title": "Modernizing a monolithic application",
+            "url": "https://www.justifiedcode.com/modernizing-a-monolithic-application",
+            "category": "Other",
+            "tags": [
+                "Architecture",
+                "Legacy Code",
+                "Modernization"
+            ]
+        },
+        {
+            "title": "JavaScript Proxy and Reflect",
+            "url": "https://piccalil.li/blog/proxy-and-reflect/",
+            "category": "Frontend",
+            "tags": [
+                "TypeScript",
+                "Proxy",
+                "Reflect"
+            ]
+        },
+        {
+            "title": "The lost joy of music piracy",
+            "url": "https://www.pigeonsandplanes.com/read/music-piracy-what-cd-oink-nine-inch-nails-streaming",
+            "category": "Other",
+            "tags": [
+                "Music",
+                "Piracy",
+                "Internet History"
+            ]
+        }
+    ]
+}
